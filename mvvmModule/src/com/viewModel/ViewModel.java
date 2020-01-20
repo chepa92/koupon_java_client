@@ -8,6 +8,8 @@ import com.view.IView;
 import javax.swing.*;
 import java.util.NoSuchElementException;
 
+import org.json.*;
+
 public class ViewModel implements IViewModel {
     private IModel model;
     private IView view;
@@ -47,6 +49,8 @@ public class ViewModel implements IViewModel {
                 } catch (MVVMdemoException e){
                     e.printStackTrace();
 
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
 
 

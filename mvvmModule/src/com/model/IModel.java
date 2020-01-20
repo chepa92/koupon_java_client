@@ -4,7 +4,7 @@ import com.MVVMdemoException;
 
 //You can add more functions
 public interface IModel {
-    public Product[] getItems() throws MVVMdemoException;
+    public Product[] getItems() throws Exception;
     public Product getItem(int id) throws MVVMdemoException;
 
     public String[] getItemsNames() throws MVVMdemoException;

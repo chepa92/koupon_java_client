@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="" />
+    <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20190722.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/model/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvvmModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mvvmModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/Program$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/Program$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/IModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,20 +33,54 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1W9Y4VsDrYBoSnMWguq2neQRw4z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json-20190722.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Program">
+    <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.model.API" />
+      <module name="mvvmModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Model" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.model.Model" />
+      <module name="mvvmModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Program" />
       <module name="mvvmModule" />
@@ -45,6 +97,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Program" />
+        <item itemvalue="Application.API" />
+        <item itemvalue="Application.Model" />
       </list>
     </recent_temporary>
   </component>
@@ -73,11 +127,15 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="72" key="#Project_Structure" timestamp="1578563108153">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2371" y="92" key="#Project_Structure" timestamp="1579541075476">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578563108153" />
+    <state x="2371" y="92" key="#Project_Structure/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579541075476" />
     <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1579086997111">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -86,56 +144,81 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1069" y="174" key="#xdebugger.XInspectDialog/0.0.1536.824@0.0.1536.824" timestamp="1578756678489" />
-    <state width="774" height="258" key="GridCell.Tab.0.bottom" timestamp="1579101035791">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="390" height="466" key="DebuggerActiveHint" timestamp="1579553947325">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="390" height="466" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579553947325" />
+    <state x="2586" y="267" key="FileChooserDialogImpl" timestamp="1579547812570">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2586" y="267" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579547812570" />
+    <state width="1877" height="114" key="GridCell.Tab.0.bottom" timestamp="1579555081396">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579101035791" />
-    <state width="774" height="258" key="GridCell.Tab.0.center" timestamp="1579101035791">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="114" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555081396" />
+    <state width="1877" height="114" key="GridCell.Tab.0.center" timestamp="1579555081396">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579101035791" />
-    <state width="774" height="258" key="GridCell.Tab.0.left" timestamp="1579101035791">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="114" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555081396" />
+    <state width="1877" height="114" key="GridCell.Tab.0.left" timestamp="1579555081396">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579101035791" />
-    <state width="774" height="258" key="GridCell.Tab.0.right" timestamp="1579101035791">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="114" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555081396" />
+    <state width="1877" height="114" key="GridCell.Tab.0.right" timestamp="1579555081396">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579101035791" />
-    <state width="774" height="258" key="GridCell.Tab.1.bottom" timestamp="1579101035792">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="114" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555081396" />
+    <state width="1877" height="341" key="GridCell.Tab.1.bottom" timestamp="1579555024640">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579101035792" />
-    <state width="774" height="258" key="GridCell.Tab.1.center" timestamp="1579101035791">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555024640" />
+    <state width="1877" height="341" key="GridCell.Tab.1.center" timestamp="1579555024640">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1579101035791" />
-    <state width="774" height="258" key="GridCell.Tab.1.left" timestamp="1579101035791">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="341" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555024640" />
+    <state width="1877" height="341" key="GridCell.Tab.1.left" timestamp="1579555024640">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1579101035791" />
-    <state width="774" height="258" key="GridCell.Tab.1.right" timestamp="1579101035792">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="341" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555024640" />
+    <state width="1877" height="341" key="GridCell.Tab.1.right" timestamp="1579555024640">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="774" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1579101035792" />
+    <state width="1877" height="341" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555024640" />
+    <state x="2360" y="100" key="SettingsEditor" timestamp="1579547817402">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2360" y="100" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579547817402" />
+    <state x="2576" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1579541045057">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2576" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579541045057" />
     <state x="690" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579087822463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="690" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1579087822463" />
+    <state x="2576" y="257" width="607" height="536" key="find.popup" timestamp="1579555233895">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2576" y="257" width="607" height="536" key="find.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579555233895" />
     <state x="209" y="34" key="new project wizard" timestamp="1578568295086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1578568295086" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/model/Model.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((HttpResponseImpl)response).body" custom="jdk.internal.net.http.HttpResponseImpl" />
+        <watch expression="obj" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -25,6 +25,7 @@ public class View implements IView {
     JSplitPane splitPane;
     JScrollPane scrollPane;
     IViewModel viewmodel;
+    JSeparator separator;
 
 
     public IViewModel getViewmodel() {
@@ -41,7 +42,7 @@ public class View implements IView {
         list = new JList<>();
         model = new DefaultListModel<>();
         panel = new JPanel();
-        searchPanel = new JPanel();
+       // searchPanel = new JPanel();
         navPanel = new JPanel();
         splitPane = new JSplitPane();
         scrollPane = new JScrollPane(list);
@@ -52,13 +53,15 @@ public class View implements IView {
         bt2 = new JButton("Delete");
         bt3 = new JButton("Update");
         bt4 = new JButton("Search");
+        separator = new JSeparator(SwingConstants.VERTICAL);
+
 
     }
 
     public void start(){
         list.setModel(model);
-        searchPanel.add(bt4);
-        searchPanel.add(tf);
+//        searchPanel.add(bt4);
+ //       searchPanel.add(tf);
 
         panel.setSize(300, 500);
         splitPane.setLeftComponent(scrollPane);
@@ -66,6 +69,11 @@ public class View implements IView {
         panel.add(lable);
         splitPane.setRightComponent(panel);
 
+
+
+        navPanel.add(tf);
+        navPanel.add(bt4);
+        navPanel.add(separator);
         navPanel.add(bt);
         navPanel.add(bt1);
         navPanel.add(bt2);
@@ -74,7 +82,7 @@ public class View implements IView {
 //        frame.setLayout(new FlowLayout());
         frame.add(navPanel, BorderLayout.NORTH);
         frame.add(splitPane, BorderLayout.CENTER);
-        frame.add(searchPanel, BorderLayout.SOUTH);
+        //frame.add(searchPanel, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 
@@ -84,6 +92,13 @@ public class View implements IView {
                 viewmodel.getItems();
             }
         });
+
+//        bt1.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                viewmodel.addItem("Hello");
+//            }
+//        });
 
 
         list.addListSelectionListener(e -> {

@@ -6,7 +6,7 @@ public class Product {
     String name;
     int price;
     String desc;
-
+    //TODO add more info to coupons
 
 
     public Product(String name, int price, String desc){

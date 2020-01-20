@@ -1,5 +1,6 @@
 package com;
 
+import com.model.API;
 import com.model.IModel;
 import com.model.Model;
 import com.view.IView;
@@ -23,6 +24,7 @@ public class Program {
                 v.setViewModel(vm);
                 vm.setModel(m);
                 vm.setView(v);
+
             }
         }));
 

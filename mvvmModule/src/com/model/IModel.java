@@ -6,6 +6,7 @@ import com.MVVMdemoException;
 public interface IModel {
     public Product[] getItems() throws Exception;
     public Product getItem(int id) throws MVVMdemoException;
+    public boolean postItem(Product product) throws MVVMdemoException;
 
     public String[] getItemsNames() throws MVVMdemoException;
     public String[] getItemsPrice() throws MVVMdemoException;

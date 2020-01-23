@@ -34,4 +34,12 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
         System.out.println(response.body());
         return(response.body());
     }
+
+    public boolean sendPOST(String myRequest) throws Exception  {
+        HttpRequest request = HttpRequest.newBuilder()
+                .POST()
+                .uri(URI.create(myRequest))
+                .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
+                .build();
+    }
 }

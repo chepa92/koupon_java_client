@@ -2,22 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20190722.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/API.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/java-final-project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvvmModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mvvmModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/META-INF/mvvmModule.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/Program$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/Program$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/IModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/IModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/IModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +54,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json-20190722.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../newChat/New folder" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -140,6 +145,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579086997111" />
+    <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579597984701">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1579597984701" />
     <state x="1069" y="174" key="#xdebugger.XInspectDialog" timestamp="1578756678489">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -148,9 +157,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="390" height="466" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579553947325" />
-    <state x="2586" y="267" key="FileChooserDialogImpl" timestamp="1579547812570">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="533" y="210" key="FileChooserDialogImpl" timestamp="1579602019893">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="533" y="210" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579602019893" />
     <state x="2586" y="267" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579547812570" />
     <state width="1877" height="114" key="GridCell.Tab.0.bottom" timestamp="1579555081396">
       <screen x="1920" y="0" width="1920" height="1050" />

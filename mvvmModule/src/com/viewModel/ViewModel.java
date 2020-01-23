@@ -84,7 +84,35 @@ public class ViewModel implements IViewModel {
     }
 
     @Override
-    public void addItem(String text) throws MVVMdemoException {
+    public void addItem(Product product) throws MVVMdemoException {
+        new Thread( new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                     model.postItems();
+//                    String []texts= model.getItemsNames();
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                view.showItems(product);
+                            } catch (MVVMdemoException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+                } catch (MVVMdemoException e){
+                    e.printStackTrace();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }).start();
 
     }
 

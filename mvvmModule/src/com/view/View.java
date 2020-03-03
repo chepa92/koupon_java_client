@@ -13,19 +13,19 @@ import java.awt.event.ActionListener;
 
 public class View implements IView {
 
-    JFrame frame;
-    JButton bt, bt1, bt2, bt3, bt4;
-    JTextField tf;
-    JList<Product> list;
-    DefaultListModel<Product> model;
-    JLabel lable;
-    JPanel panel;
-    JPanel searchPanel;
-    JPanel navPanel;
-    JSplitPane splitPane;
-    JScrollPane scrollPane;
-    IViewModel viewmodel;
-    JSeparator separator;
+    private JFrame frame;
+    private JButton bt, bt1, bt2, bt3, bt4;
+    private JTextField tf;
+    private JList<Product> list;
+    private DefaultListModel<Product> model;
+    private JLabel lable;
+    private JPanel panel;
+    private JPanel searchPanel;
+    private JPanel navPanel;
+    private JSplitPane splitPane;
+    private JScrollPane scrollPane;
+    private IViewModel viewmodel;
+    private JSeparator separator;
 
 
     public IViewModel getViewmodel() {

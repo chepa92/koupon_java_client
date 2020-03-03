@@ -13,5 +13,7 @@ public interface IViewModel {
     public void setModel(IModel m) ;
     public void setView(IView v);
 
+    public void login();
 
+    public void getSecret();
 }

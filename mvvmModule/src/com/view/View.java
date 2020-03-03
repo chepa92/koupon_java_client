@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class View implements IView {
 
     JFrame frame;
-    JButton bt, bt1, bt2, bt3, bt4;
+    JButton bt, bt1, bt2, bt3, bt4, bt5;
     JTextField tf;
     JList<Product> list;
     DefaultListModel<Product> model;
@@ -53,6 +53,7 @@ public class View implements IView {
         bt2 = new JButton("Delete");
         bt3 = new JButton("Update");
         bt4 = new JButton("Search");
+        bt5 = new JButton("Login");
         separator = new JSeparator(SwingConstants.VERTICAL);
 
 
@@ -78,6 +79,7 @@ public class View implements IView {
         navPanel.add(bt1);
         navPanel.add(bt2);
         navPanel.add(bt3);
+        navPanel.add(bt5);
 
 //        frame.setLayout(new FlowLayout());
         frame.add(navPanel, BorderLayout.NORTH);
@@ -90,6 +92,20 @@ public class View implements IView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 viewmodel.getItems();
+            }
+        });
+
+        bt5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                viewmodel.login();
+            }
+        });
+
+        bt1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                viewmodel.getSecret();
             }
         });
 

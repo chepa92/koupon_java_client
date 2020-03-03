@@ -12,4 +12,7 @@ public interface IModel {
     public String[] getItemsDesc() throws MVVMdemoException;
     public void addItem(String text) throws  MVVMdemoException;
     public void deleteItem() throws MVVMdemoException;
+    public String login() throws MVVMdemoException, Exception;
+
+    public String getSecret() throws MVVMdemoException, Exception;
 }

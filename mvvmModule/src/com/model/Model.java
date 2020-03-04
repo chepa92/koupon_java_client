@@ -46,8 +46,9 @@ public class Model implements IModel {
         return null;
     }
     @Override
-    public boolean postItem(Product product) throws MVVMdemoException{
-        boolean result = api.sendPOST("http://koupon.chepa.net/api/coupon/getCoupon");
+    public void postItem(Product product) throws Exception {
+//        boolean result = api.sendPOST("http://koupon.chepa.net/api/coupon/addCoupon");
+        api.sendPOST("http://koupon.chepa.net/api/coupon/addCoupon", product);
 
     }
 

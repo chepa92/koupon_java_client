@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/java-final-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/META-INF/mvvmModule.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/Program$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/Program$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/IModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/IModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/IModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/viewModel/IViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/IViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,10 +125,10 @@
     </state>
     <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578563108153" />
     <state x="2371" y="92" key="#Project_Structure/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1579541075476" />
-    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1579086997111">
+    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1583230896656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579086997111" />
+    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583230896656" />
     <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1579597984701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -222,6 +206,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="34" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1578568295086" />
+    <state x="835" y="50" key="refactoring.ChangeSignatureDialog" timestamp="1583244028782">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="835" y="50" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1583244028782" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

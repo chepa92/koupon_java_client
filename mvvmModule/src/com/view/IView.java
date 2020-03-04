@@ -8,7 +8,7 @@ import com.MVVMdemoException;
  * Drfinig function for UI
  */
 public interface IView {
-    public void setMessage(String text) throws MVVMdemoException;
+    public void setMessage(String text) throws MVVMdemoException; //No exceptions
     public void showItem(Product item) throws MVVMdemoException;
     public void showItems(Product[] items) throws MVVMdemoException;
     public void setViewModel(IViewModel ob);

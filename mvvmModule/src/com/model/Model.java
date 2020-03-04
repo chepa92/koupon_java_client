@@ -16,7 +16,7 @@ public class Model implements IModel {
 
     @Override
     public Product[] getItems() throws Exception {
-        String result = api.sendGET("http://koupon.chepa.net/api/coupon/getAllCoupons");
+        String result = api.sendGET("https://koupon.chepa.net/api/coupon/getAllCoupons");
 
         JSONArray obj = new JSONArray(result);
         Product[] coupons = new Product[obj.length()];
@@ -32,6 +32,47 @@ public class Model implements IModel {
         }
 
         return coupons;
+
+    }
+
+    @Override
+    public String login() throws Exception {
+        String result = api.sendPost();
+
+//        JSONArray obj = new JSONArray(result);
+//        Product[] coupons = new Product[obj.length()];
+//
+//        for (int i = 0; i < obj.length(); i++) {
+//            String id = obj.getJSONObject(i).getString("_id");
+//            String title = obj.getJSONObject(i).getString("title");
+//            String discount = obj.getJSONObject(i).getString("discount");
+//            String couponName = obj.getJSONObject(i).getString("couponName");
+//            Product coupon = new Product(title, 666, couponName); //TODO price fix
+//            coupons[i] = coupon;
+//            //System.out.println(obj.getJSONObject(i).getString("couponName"));
+//        }
+
+        return "Hello";
+
+    }
+
+    public String getSecret() throws Exception {
+        String result = api.sendGET("https://koupon.chepa.net/api/secret");
+
+        JSONArray obj = new JSONArray(result);
+//        Product[] coupons = new Product[obj.length()];
+//
+//        for (int i = 0; i < obj.length(); i++) {
+//            String id = obj.getJSONObject(i).getString("_id");
+//            String title = obj.getJSONObject(i).getString("title");
+//            String discount = obj.getJSONObject(i).getString("discount");
+//            String couponName = obj.getJSONObject(i).getString("couponName");
+//            Product coupon = new Product(title, 666, couponName); //TODO price fix
+//            coupons[i] = coupon;
+//            //System.out.println(obj.getJSONObject(i).getString("couponName"));
+//        }
+
+        return "Hello";
 
     }
 

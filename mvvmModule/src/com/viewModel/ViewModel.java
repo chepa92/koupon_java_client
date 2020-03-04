@@ -25,6 +25,71 @@ public class ViewModel implements IViewModel {
 //    public ViewModel{
 //        this.view = setModel();
 //    }
+@Override
+public void login() {
+    new Thread( new Runnable() {
+        @Override
+        public void run() {
+
+            try {
+                String string = model.login();
+//                    String []texts= model.getItemsNames();
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+//                        try {
+//                            view.login();
+//                        } catch (MVVMdemoException e) {
+//                            e.printStackTrace();
+//                        }
+                        System.out.println("Login");
+                    }
+                });
+
+            } catch (MVVMdemoException e){
+                e.printStackTrace();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        }
+    }).start();
+}
+
+    public void getSecret() {
+        new Thread( new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    String string = model.getSecret();
+//                    String []texts= model.getItemsNames();
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+//                        try {
+//                            view.login();
+//                        } catch (MVVMdemoException e) {
+//                            e.printStackTrace();
+//                        }
+                            System.out.println("Login");
+                        }
+                    });
+
+                } catch (MVVMdemoException e){
+                    e.printStackTrace();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }).start();
+    }
+
 
     @Override
     public void getItems() {

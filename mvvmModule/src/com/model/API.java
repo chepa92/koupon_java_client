@@ -6,6 +6,14 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpHeaders;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
@@ -36,6 +44,7 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
         return(response.body());
     }
 
+<<<<<<< HEAD
     public void sendPOST(String myRequest, Product product) throws IOException, InterruptedException  {
         String json = new StringBuilder()//TODO create from product
                 .append("{")
@@ -47,6 +56,21 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .uri(URI.create(myRequest))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
+=======
+    public String sendPost() throws Exception {
+
+        // form parameters
+        Map<Object, Object> data = new HashMap<>();
+        data.put("username", "admin");
+        data.put("password", "admin");
+        data.put("ts", System.currentTimeMillis());
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .POST(buildFormDataFromMap(data))
+                .uri(URI.create("https://koupon.chepa.net/api/login-with-passport-local-strategy"))
+                .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
+                .header("Content-Type", "application/x-www-form-urlencoded")
+>>>>>>> 8d3762b9924f0b5af37b6712627b3a1ab86c2439
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -56,5 +80,27 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
         // print response body
         System.out.println(response.body());
+<<<<<<< HEAD
     }
+=======
+
+        return "Hello";
+
+    }
+
+    private static HttpRequest.BodyPublisher buildFormDataFromMap(Map<Object, Object> data) {
+        var builder = new StringBuilder();
+        for (Map.Entry<Object, Object> entry : data.entrySet()) {
+            if (builder.length() > 0) {
+                builder.append("&");
+            }
+            builder.append(URLEncoder.encode(entry.getKey().toString(), StandardCharsets.UTF_8));
+            builder.append("=");
+            builder.append(URLEncoder.encode(entry.getValue().toString(), StandardCharsets.UTF_8));
+        }
+        System.out.println(builder.toString());
+        return HttpRequest.BodyPublishers.ofString(builder.toString());
+    }
+
+>>>>>>> 8d3762b9924f0b5af37b6712627b3a1ab86c2439
 }

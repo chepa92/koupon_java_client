@@ -18,6 +18,11 @@ public class ViewModel implements IViewModel {
         this.view = view;
     }
 
+//    @Override
+//    public void login() {
+//
+//    }
+
     public void setModel(IModel model) {
         this.model = model;
     }
@@ -26,22 +31,22 @@ public class ViewModel implements IViewModel {
 //        this.view = setModel();
 //    }
 @Override
-public void login() {
+public void login(String name, String pass) {
     new Thread( new Runnable() {
         @Override
         public void run() {
 
             try {
-                String string = model.login();
+                String string = model.login(name, pass);
 //                    String []texts= model.getItemsNames();
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-//                        try {
-//                            view.login();
-//                        } catch (MVVMdemoException e) {
-//                            e.printStackTrace();
-//                        }
+                        try {
+                            view.loginSucces(name);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         System.out.println("Login");
                     }
                 });

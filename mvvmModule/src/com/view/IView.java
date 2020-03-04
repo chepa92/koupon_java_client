@@ -13,4 +13,6 @@ public interface IView {
     public void showItems(Product[] items) throws MVVMdemoException;
     public void setViewModel(IViewModel ob);
     public void start();
-    }
+
+    public void loginSucces(String name);
+}

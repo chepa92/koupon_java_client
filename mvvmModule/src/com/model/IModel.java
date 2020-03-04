@@ -13,13 +13,10 @@ public interface IModel {
     public String[] getItemsDesc() throws MVVMdemoException;
     public void addItem(String text) throws  MVVMdemoException;
     public void deleteItem() throws MVVMdemoException;
-<<<<<<< HEAD
 
 
 //    void postItems(Product product);
-=======
-    public String login() throws MVVMdemoException, Exception;
+    public String login(String name, String pass) throws MVVMdemoException, Exception;
 
     public String getSecret() throws MVVMdemoException, Exception;
->>>>>>> 8d3762b9924f0b5af37b6712627b3a1ab86c2439
 }

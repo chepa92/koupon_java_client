@@ -17,7 +17,11 @@ public interface IViewModel {
     public void setModel(IModel m) ;
     public void setView(IView v);
 
-    public void login();
+    public void login(String name, String pass) ;
+
+    //    public ViewModel{
+    //        this.view = setModel();
+    //    }
 
     public void getSecret();
 }

@@ -13,35 +13,21 @@ import java.awt.event.ActionListener;
 
 public class View implements IView {
 
-<<<<<<< HEAD
-    private JFrame frame;
-    private JButton bt, bt1, bt2, bt3, bt4;
-    private JTextField tf;
-    private JList<Product> list;
-    private DefaultListModel<Product> model;
-    private JLabel lable;
-    private JPanel panel;
-    private JPanel searchPanel;
-    private JPanel navPanel;
-    private JSplitPane splitPane;
-    private JScrollPane scrollPane;
-    private IViewModel viewmodel;
-    private JSeparator separator;
-=======
-    JFrame frame;
+    JFrame loginFrame;
+   JFrame frame;
     JButton bt, bt1, bt2, bt3, bt4, bt5;
-    JTextField tf;
+    JTextField tf, nametf, passtf;
     JList<Product> list;
     DefaultListModel<Product> model;
-    JLabel lable;
+    JLabel lable, name, pass;
     JPanel panel;
+    JPanel loginPanel;
     JPanel searchPanel;
     JPanel navPanel;
     JSplitPane splitPane;
     JScrollPane scrollPane;
     IViewModel viewmodel;
     JSeparator separator;
->>>>>>> 8d3762b9924f0b5af37b6712627b3a1ab86c2439
 
 
     public IViewModel getViewmodel() {
@@ -54,6 +40,10 @@ public class View implements IView {
 
 
     public View(){
+        loginFrame = new JFrame("Login:");
+        loginPanel = new JPanel();
+        nametf = new JTextField(20);
+        passtf =new JTextField(20);
         frame = new JFrame("Computers Storage");
         list = new JList<>();
         model = new DefaultListModel<>();
@@ -62,6 +52,8 @@ public class View implements IView {
         navPanel = new JPanel();
         splitPane = new JSplitPane();
         scrollPane = new JScrollPane(list);
+        name = new JLabel("User Name");
+        pass= new JLabel("Password");
         lable = new JLabel();
         tf = new JTextField(20);
         bt = new JButton("See All Items");
@@ -76,6 +68,15 @@ public class View implements IView {
     }
 
     public void start(){
+        loginPanel.setSize(300,500);
+        loginPanel.add(name);
+        loginPanel.add(nametf);
+        loginPanel.add(pass);
+        loginPanel.add(passtf);
+
+        loginPanel.add(bt5);
+        loginFrame.add(loginPanel, BorderLayout.CENTER);
+
         list.setModel(model);
 //        searchPanel.add(bt4);
  //       searchPanel.add(tf);
@@ -95,7 +96,6 @@ public class View implements IView {
         navPanel.add(bt1);
         navPanel.add(bt2);
         navPanel.add(bt3);
-        navPanel.add(bt5);
 
 //        frame.setLayout(new FlowLayout());
         frame.add(navPanel, BorderLayout.NORTH);
@@ -114,7 +114,9 @@ public class View implements IView {
         bt5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewmodel.login();
+                String username= nametf.getText();
+                String pass = passtf.getText();
+                viewmodel.login(username, pass);
             }
         });
 
@@ -144,10 +146,21 @@ public class View implements IView {
         });
 
         // frame.pack();
-        frame.setVisible(true);
+        frame.setVisible(false);
         frame.setSize(600,400);
+        loginFrame.setVisible(true);
+        loginFrame.setSize(600,400);
+
 
     }
+
+    @Override
+    public void loginSucces(String name) {
+        frame.setVisible(true);
+        loginFrame.setVisible(false);
+
+    }
+
     @Override
     public void setMessage(String text) throws MVVMdemoException {
         tf.setText(text);

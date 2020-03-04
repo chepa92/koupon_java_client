@@ -36,8 +36,8 @@ public class Model implements IModel {
     }
 
     @Override
-    public String login() throws Exception {
-        String result = api.sendPost();
+    public String login(String name, String pass) throws MVVMdemoException, Exception {
+        String result = api.sendPost(name, pass);
 
 //        JSONArray obj = new JSONArray(result);
 //        Product[] coupons = new Product[obj.length()];

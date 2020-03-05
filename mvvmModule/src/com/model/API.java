@@ -1,5 +1,7 @@
 package com.model;
 
+import okhttp3.*;
+
 import java.io.IOException;
 import java.net.*;
 import java.net.http.HttpClient;
@@ -31,17 +33,17 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
                 .build();
 
 
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        //HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         // print response headers
-        HttpHeaders headers = response.headers();
+        //HttpHeaders headers = response.headers();
         //headers.map().forEach((k, v) -> System.out.println(k + ":" + v)); //TODO get cookie form here
 
         // print status code
         //System.out.println(response.statusCode());
 
         // print response body
-        System.out.println(response.body());
-        return(response.body());
+        //System.out.println(response.body());
+        return("test");
     }
 
    public void sendPOST(String myRequest, Product product) throws IOException, InterruptedException {
@@ -58,56 +60,32 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
                 .build();
    }
     public String sendPost( String name, String pass) throws Exception {
-        HttpClient.newBuilder()
-                .cookieHandler(new CookieManager(null, CookiePolicy.ACCEPT_NONE))
+
+        OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
 
 
-
-        // form parameters
-        Map<Object, Object> data = new HashMap<>();
-        data.put("username", name);
-        data.put("password", pass);
-        data.put("ts", System.currentTimeMillis());
-
-
-//        HttpRequest.Builder	header​(String name, String value)
-        HttpRequest request = HttpRequest.newBuilder()
-                .POST(buildFormDataFromMap(data))
-                .uri(URI.create("https://koupon.chepa.net/api/login-with-passport-local-strategy"))
-                .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
-                .header("Content-Type", "application/x-www-form-urlencoded")
+        MediaType mediaType = MediaType.parse("application/json");
+        RequestBody body = RequestBody.create(mediaType, "{\"username\":\"admin\",\"password\":\"admin\"}");
+        Request request = new Request.Builder()
+                .url("https://koupon.chepa.net/api/login?access_token=s%3AV2Zf-rFyRyjXAzCcnVU5HUckwO_WBGlY.tDExjzKFiEMVSUNpXt60R1tBm3bSETTFNF8UDK7y9Iw")
+                .method("POST", body)
+                .addHeader("Content-Type", "application/json")
                 .build();
+        Response response = client.newCall(request).execute();
+        String some = response.body().string();
 
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
 
-       //*var client = HttpClient.newBuilder()
-            //    .cookieHandler(CookieHandler.getDefault())
-         //       .build();
-//        CookieManager cm = new CookieManager();
-//
-//        String uri = "https://koupon.chepa.net/api/coupon/getAllCoupons";
-//        URL url = new URL(uri);
-//        URLConnection connection = url.openConnection();
-//        connection.getContent();
-//        CookieStore cookieStore = cm.getCookieStore();
-//        List<HttpCookie> cookieList = cookieStore.getCookies();
-//
-//        for (HttpCookie cookie : cookieList) {
-//            System.out.println("Domain: " + cookie.getDomain());
-//            //To retrieve current cookie store.
-//            System.out.println(cm.getCookieStore());
-//        }
+        Request request1 = new Request.Builder()
+                .url("https://koupon.chepa.net/api/secret")
+                .method("GET", null)
+                .addHeader("Cookie", "connect.sid=s%3AvjjjMd1gu9z6jtfzSpaWV69E-tbsceay.0Qx%2Bb9sfqXTpl4%2Bv7V2%2BeXa3w%2BVMOsDlpwdMV9aGNHo")
+                .build();
+        Response response1 = client.newCall(request1).execute();
+        String some1 = response1.body().string();
 
-        // print status code
-        System.out.println(response.statusCode());
-        if (response.statusCode() == 200){
-            return ("Success");
-        }
-
-        // print response body
-        System.out.println(response.body());
+        System.out.println("hey");
         return ("Failed");
 
     }

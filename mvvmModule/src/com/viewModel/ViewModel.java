@@ -8,13 +8,11 @@ import com.view.IView;
 import javax.swing.*;
 import java.util.NoSuchElementException;
 
-import org.json.*;
-
 public class ViewModel implements IViewModel {
     private IModel model;
     private IView view;
 
-    public void setView(IView view){
+    public void setView(IView view) {
         this.view = view;
     }
 
@@ -27,49 +25,50 @@ public class ViewModel implements IViewModel {
         this.model = model;
     }
 
-//    public ViewModel{
+    //    public ViewModel{
 //        this.view = setModel();
 //    }
-@Override
-public void login(String name, String pass) {
-    new Thread( new Runnable() {
-        @Override
-        public void run() {
-
-            try {
-                String string = model.login(name, pass);
-//                    String []texts= model.getItemsNames();
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            view.loginSucces(name);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        System.out.println("Login");
-                    }
-                });
-
-            } catch (MVVMdemoException e){
-                e.printStackTrace();
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-
-        }
-    }).start();
-}
-
-    public void getSecret() {
-        new Thread( new Runnable() {
+    @Override
+    public void login(String name, String pass) {
+        new Thread(new Runnable() {
             @Override
             public void run() {
 
                 try {
-                    String string = model.getSecret();
+                    String string = model.login(name, pass);
+//                    String []texts= model.getItemsNames();
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                view.loginSucces(name);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            System.out.println("Login");
+                        }
+                    });
+
+                } catch (MVVMdemoException e) {
+                    e.printStackTrace();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }).start();
+    }
+
+    @Override
+    public void postCoupon(Product product) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    String string = model.postCoupon(product);
 //                    String []texts= model.getItemsNames();
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
@@ -83,7 +82,7 @@ public void login(String name, String pass) {
                         }
                     });
 
-                } catch (MVVMdemoException e){
+                } catch (MVVMdemoException e) {
                     e.printStackTrace();
 
                 } catch (Exception e) {
@@ -98,7 +97,7 @@ public void login(String name, String pass) {
 
     @Override
     public void getItems() {
-        new Thread( new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
 
@@ -116,7 +115,7 @@ public void login(String name, String pass) {
                         }
                     });
 
-                } catch (MVVMdemoException e){
+                } catch (MVVMdemoException e) {
                     e.printStackTrace();
 
                 } catch (Exception e) {
@@ -129,11 +128,11 @@ public void login(String name, String pass) {
     }
 
     @Override
-    public void getItem( String id) {
+    public void getItem(String id) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
+                try {
                     Product p = model.getItem(id);
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
@@ -160,12 +159,12 @@ public void login(String name, String pass) {
 
     @Override
     public void addItem(Product product) throws MVVMdemoException {
-        new Thread( new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
 
                 try {
-                     model.postItem(product);
+                    model.postItem(product);
 //                    String []texts= model.getItemsNames();
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
@@ -178,7 +177,7 @@ public void login(String name, String pass) {
                         }
                     });
 
-                } catch (MVVMdemoException e){
+                } catch (MVVMdemoException e) {
                     e.printStackTrace();
 
                 } catch (Exception e) {

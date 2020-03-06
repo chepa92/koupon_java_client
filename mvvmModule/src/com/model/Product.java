@@ -1,10 +1,5 @@
 package com.model;
 
-import org.w3c.dom.Text;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class Product {
     String id;
     String title;
@@ -53,19 +48,6 @@ public class Product {
     public void setLink(String link) {
         this.link = link;
     }
-
-
-
-//    public URL getLink() {
-//        return link;
-//    }
-
-//    public void setLink(String link) throws MalformedURLException {
-//        System.out.println(link);
-//        this.link = new URL(link);
-//    }
-
-
 
     @Override
     public String toString() {

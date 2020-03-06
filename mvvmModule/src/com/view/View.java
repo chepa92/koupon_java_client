@@ -4,15 +4,10 @@ import com.viewModel.IViewModel;
 import com.MVVMdemoException;
 import com.model.Product;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.net.URL;
 
 public class View implements IView {
 
@@ -161,16 +156,6 @@ public class View implements IView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 formFrame.setVisible(true);
-                String newTitle = titleTf.getText();
-                String newDiscount = discountTf.getText();
-                String newLink = linkTf.getText();
-                Product product = new Product(newTitle, newDiscount, newLink);
-
-                try {
-                    viewmodel.addItem(product);
-                } catch (MVVMdemoException ex) {
-                    ex.printStackTrace();
-                }
             }
 
         });
@@ -179,7 +164,14 @@ public class View implements IView {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                viewmodel.getSecret();
+                String newTitle = titleTf.getText();
+                String newDiscount = discountTf.getText();
+                String newLink = linkTf.getText();
+                Product product = new Product(newTitle, newDiscount, newLink);
+                viewmodel.postCoupon(product);
+                formFrame.setVisible(false);
+
+
             }
 
         });

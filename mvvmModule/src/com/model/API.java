@@ -1,6 +1,8 @@
 package com.model;
 
 import okhttp3.*;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.*;
@@ -41,7 +43,7 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
     public boolean login(String name, String pass) throws Exception {
 
         MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, "{\"username\":\"admin\",\"password\":\"admin\"}");
+        RequestBody body = RequestBody.create(mediaType, "{\"username\":\"admin\",\"password\":\"admin\"}"); //TODO - add real name/pass
 
         Request request = new Request.Builder()
                 .url("https://koupon.chepa.net/api/login?access_token=s%3AV2Zf-rFyRyjXAzCcnVU5HUckwO_WBGlY.tDExjzKFiEMVSUNpXt60R1tBm3bSETTFNF8UDK7y9Ic")
@@ -60,13 +62,37 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
     public boolean postItem(String url, Product product) throws Exception {
 
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("title", product.getTitle());
+            jsonObject.put("discount", product.getDiscount());
+            jsonObject.put("link", product.getLink());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        OkHttpClient client = new OkHttpClient();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        // put your json here
+        RequestBody body = RequestBody.create(JSON, jsonObject.toString());
         Request request = new Request.Builder()
-                .url(url)
-                .method("POST", null)
+                .url("https://koupon.chepa.net/api/coupon/addCoupon")
+                .method("POST", body)
+                .addHeader("Content-Type", "application/json")
                 .addHeader("Cookie", cookie)
                 .build();
-        Response response = client.newCall(request).execute();
-        String some = response.body().string();
+
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+            String resStr = response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         if (response != null) {
             return true;
         }

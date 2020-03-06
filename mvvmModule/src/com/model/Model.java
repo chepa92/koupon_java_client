@@ -9,12 +9,6 @@ public class Model implements IModel {
     API api = new API();
     Product[] coupons ;
 
-//    Product[] computerProducts = {
-//            new Product("Lenovo", 2000, "L1222 Lenovo i7 Pc"),
-//            new Product("Samsung", 1850, "Samsung new Computer"),
-//            new Product("HP", 1200, "HP Computer")
-//    };
-
     @Override
     public Product[] getItems() throws Exception {
         String result = api.sendGET("https://koupon.chepa.net/api/coupon/getAllCoupons");
@@ -43,21 +37,8 @@ public class Model implements IModel {
 
     }
 
-    public String getSecret() throws Exception {
-        String result = api.sendGET("https://koupon.chepa.net/api/secret");
-
-        JSONArray obj = new JSONArray(result);
-//        Product[] coupons = new Product[obj.length()];
-//
-//        for (int i = 0; i < obj.length(); i++) {
-//            String id = obj.getJSONObject(i).getString("_id");
-//            String title = obj.getJSONObject(i).getString("title");
-//            String discount = obj.getJSONObject(i).getString("discount");
-//            String couponName = obj.getJSONObject(i).getString("couponName");
-//            Product coupon = new Product(title, 666, couponName); //TODO price fix
-//            coupons[i] = coupon;
-//            //System.out.println(obj.getJSONObject(i).getString("couponName"));
-//        }
+    public String postCoupon(Product product) throws Exception {
+        boolean result = api.postItem("https://koupon.chepa.net/api/secret", product);
 
         return "Hello";
 

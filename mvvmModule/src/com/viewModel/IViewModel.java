@@ -23,5 +23,5 @@ public interface IViewModel {
     //        this.view = setModel();
     //    }
 
-    public void getSecret();
+    public void postCoupon(Product product);
 }

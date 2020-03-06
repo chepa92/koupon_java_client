@@ -26,16 +26,16 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
             .build();
 
 
-    public String sendGET(String myRequest) throws Exception {
+    public String sendGET(String url) throws Exception {
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .uri(URI.create(myRequest))
-                .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
+        Request request = new Request.Builder()
+                .url(url)
+                .method("GET", null)
+                .addHeader("Cookie", cookie)
                 .build();
-
-
-        return ("test");
+        Response response = client.newCall(request).execute();
+        String some = response.body().string();
+        return some;
     }
 
     public boolean login(String name, String pass) throws Exception {
@@ -62,12 +62,12 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
         Request request = new Request.Builder()
                 .url(url)
-                .method("GET", null)
+                .method("POST", null)
                 .addHeader("Cookie", cookie)
                 .build();
         Response response = client.newCall(request).execute();
         String some = response.body().string();
-        if (response != null){
+        if (response != null) {
             return true;
         }
         return false;
@@ -76,19 +76,17 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
     public boolean sendPost(String url, String other) throws Exception {
         Request request = new Request.Builder()
                 .url(url)
-                .method("GET", null)
+                .method("POST", null)
                 .addHeader("Cookie", cookie)
                 .build();
         Response response = client.newCall(request).execute();
         String some = response.body().string();
 
-        if (response != null){
+        if (response != null) {
             return true;
         }
         return false;
     }
-
-
 
 
     private static HttpRequest.BodyPublisher buildFormDataFromMap(Map<Object, Object> data) {

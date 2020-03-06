@@ -4,24 +4,27 @@ import com.viewModel.IViewModel;
 import com.MVVMdemoException;
 import com.model.Product;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 
 public class View implements IView {
 
     JFrame loginFrame;
-   JFrame frame;
-    JButton bt, bt1, bt2, bt3, bt4, bt5;
-    JTextField tf, nametf, passtf;
+   JFrame frame, formFrame;
+    JButton bt, bt1, bt2, bt3, bt4, bt5, bt6;
+    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf ;
     JList<Product> list;
     DefaultListModel<Product> model;
-    JLabel lable, name, pass;
+    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink;
     JPanel panel;
-    JPanel loginPanel;
+    JPanel loginPanel, formPanel;
     JPanel searchPanel;
     JPanel navPanel;
     JSplitPane splitPane;
@@ -42,8 +45,13 @@ public class View implements IView {
     public View(){
         loginFrame = new JFrame("Login:");
         loginPanel = new JPanel();
+        formFrame = new JFrame();
+        formPanel = new JPanel();
         nametf = new JTextField(20);
         passtf =new JTextField(20);
+        titleTf = new JTextField(20);
+        discountTf = new JTextField(20);
+        linkTf = new JTextField(20);
         frame = new JFrame("Computers Storage");
         list = new JList<>();
         model = new DefaultListModel<>();
@@ -55,19 +63,29 @@ public class View implements IView {
         name = new JLabel("User Name");
         pass= new JLabel("Password");
         lable = new JLabel();
+        lable1 = new JLabel();
+        lable2 = new JLabel();
+        lblTitle = new JLabel("Title: ");
+        lblDiscount = new JLabel("Discount: ");
+        lblLink = new JLabel("Link: ");
         tf = new JTextField(20);
         bt = new JButton("See All Items");
-        bt1 = new JButton("Add");
+        bt1 = new JButton("Add new coupon");
         bt2 = new JButton("Delete");
         bt3 = new JButton("Update");
         bt4 = new JButton("Search");
         bt5 = new JButton("Login");
+        bt6 = new JButton("Save");
+
         separator = new JSeparator(SwingConstants.VERTICAL);
+
 
 
     }
 
     public void start(){
+
+        //Login panel elements
         loginPanel.setSize(300,500);
         loginPanel.add(name);
         loginPanel.add(nametf);
@@ -77,6 +95,24 @@ public class View implements IView {
         loginPanel.add(bt5);
         loginFrame.add(loginPanel, BorderLayout.CENTER);
 
+        //Form panel elements
+        formPanel.setSize(250,300);
+
+        formPanel.add(lblTitle);
+        formPanel.add(titleTf);
+        formPanel.add(lblDiscount);
+        formPanel.add(discountTf);
+        formPanel.add(lblLink);
+        formPanel.add(linkTf);
+        formPanel.add(bt6);
+
+        formPanel.setLayout(new FlowLayout());
+        formFrame.setSize(300,300);
+        formFrame.add(formPanel);
+
+
+//        formFrame.add(formPanel, BorderLayout.CENTER);
+
         list.setModel(model);
 //        searchPanel.add(bt4);
  //       searchPanel.add(tf);
@@ -85,9 +121,9 @@ public class View implements IView {
         splitPane.setLeftComponent(scrollPane);
         splitPane.setSize(200, 500);
         panel.add(lable);
+        panel.add(lable1);
+        panel.add(lable2);
         splitPane.setRightComponent(panel);
-
-
 
         navPanel.add(tf);
         navPanel.add(bt4);
@@ -121,10 +157,21 @@ public class View implements IView {
         });
 
         bt1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                formFrame.setVisible(true);
+            }
+
+        });
+
+        bt6.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 viewmodel.getSecret();
             }
+
         });
 
 //        bt1.addActionListener(new ActionListener() {
@@ -133,6 +180,7 @@ public class View implements IView {
 //                viewmodel.addItem("Hello");
 //            }
 //        });
+
 
 
         list.addListSelectionListener(e -> {
@@ -147,6 +195,7 @@ public class View implements IView {
 
         // frame.pack();
         frame.setVisible(false);
+        formFrame.setVisible(false);
         frame.setSize(600,400);
         loginFrame.setVisible(true);
         loginFrame.setSize(600,400);
@@ -168,7 +217,9 @@ public class View implements IView {
 
     @Override
     public void showItem(Product item) throws MVVMdemoException {
-        lable.setText("Name: " + item.getName() + "\n Price: "+ item.getPrice() + "\n" + item.getDesc());
+        lable.setText("Name: " + item.getTitle() );
+        lable1.setText("Discount: " + item.getDiscount() );
+        lable2.setText("Link: " + item.getLink() );
     }
 
     @Override

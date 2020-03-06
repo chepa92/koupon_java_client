@@ -33,17 +33,17 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
                 .build();
 
 
-        //HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-        // print response headers
-        //HttpHeaders headers = response.headers();
-        //headers.map().forEach((k, v) -> System.out.println(k + ":" + v)); //TODO get cookie form here
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+//         print response headers
+        HttpHeaders headers = response.headers();
+        headers.map().forEach((k, v) -> System.out.println(k + ":" + v)); //TODO get cookie form here
 
-        // print status code
-        //System.out.println(response.statusCode());
+//         print status code
+        System.out.println(response.statusCode());
 
-        // print response body
-        //System.out.println(response.body());
-        return("test");
+//         print response body
+        System.out.println(response.body());
+        return(response.body());
     }
 
    public void sendPOST(String myRequest, Product product) throws IOException, InterruptedException {

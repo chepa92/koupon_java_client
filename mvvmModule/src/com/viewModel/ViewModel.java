@@ -129,7 +129,7 @@ public void login(String name, String pass) {
     }
 
     @Override
-    public void getItem( int id) {
+    public void getItem( String id) {
         new Thread(new Runnable() {
             @Override
             public void run() {

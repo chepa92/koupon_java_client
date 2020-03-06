@@ -1,55 +1,78 @@
 package com.model;
 
+import org.w3c.dom.Text;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Product {
-    private static final int  initId = 1;
-    int id;
-    String name;
-    int price;
-    String desc;
-    //TODO add more info to coupons
+    String id;
+    String title;
+    String discount;
+    String couponName;
+        String link;
 
-
-    public Product(String name, int price, String desc){
-        this.setId(initId);
-        this.setName(name);
-        this.setPrice(price);
-        this.setDesc(desc);
+    public Product(String id, String title, String discount, String couponName, String link) throws MalformedURLException {
+        this.setId(id);
+        this.setTitle(title);
+        this.setDiscount(discount);
+        this.setCouponName(couponName);
+        this.setLink(link);
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id++;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getPrice() {
-        return price;
+    public String getDiscount() {
+        return discount;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+    public String getCouponName() {
+        return couponName;
     }
 
-    public String getDesc() {
-        return desc;
+    public void setCouponName(String couponName) {
+        this.couponName = couponName;
+    }
+    public String getLink() {
+        return link;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setLink(String link) {
+        this.link = link;
     }
+
+
+
+//    public URL getLink() {
+//        return link;
+//    }
+
+//    public void setLink(String link) throws MalformedURLException {
+//        System.out.println(link);
+//        this.link = new URL(link);
+//    }
+
+
 
     @Override
     public String toString() {
-        return name;
+        return title;
     }
 
 }

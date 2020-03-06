@@ -9,14 +9,17 @@ public class Product {
     String id;
     String title;
     String discount;
-    String couponName;
-        String link;
+    String link;
 
-    public Product(String id, String title, String discount, String couponName, String link) throws MalformedURLException {
+    public Product(String id, String title, String discount, String link) {
         this.setId(id);
         this.setTitle(title);
         this.setDiscount(discount);
-        this.setCouponName(couponName);
+        this.setLink(link);
+    }
+    public Product( String title, String discount, String link) {
+        this.setTitle(title);
+        this.setDiscount(discount);
         this.setLink(link);
     }
     public String getId() {
@@ -42,13 +45,7 @@ public class Product {
     public void setDiscount(String discount) {
         this.discount = discount;
     }
-    public String getCouponName() {
-        return couponName;
-    }
 
-    public void setCouponName(String couponName) {
-        this.couponName = couponName;
-    }
     public String getLink() {
         return link;
     }

@@ -73,7 +73,7 @@ public class View implements IView {
         bt1 = new JButton("Add new coupon");
         bt2 = new JButton("Delete");
         bt3 = new JButton("Update");
-        bt4 = new JButton("Search");
+//        bt4 = new JButton("Search");
         bt5 = new JButton("Login");
         bt6 = new JButton("Save");
 
@@ -125,12 +125,11 @@ public class View implements IView {
         panel.add(lable2);
         splitPane.setRightComponent(panel);
 
-        navPanel.add(tf);
-        navPanel.add(bt4);
+        navPanel.add(bt2);
+//        navPanel.add(tf);
         navPanel.add(separator);
         navPanel.add(bt);
         navPanel.add(bt1);
-        navPanel.add(bt2);
         navPanel.add(bt3);
 
 //        frame.setLayout(new FlowLayout());
@@ -156,11 +155,22 @@ public class View implements IView {
             }
         });
 
-        bt1.addActionListener(new ActionListener() {
+        //add new coupon button
 
+        bt1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 formFrame.setVisible(true);
+                String newTitle = titleTf.getText();
+                String newDiscount = discountTf.getText();
+                String newLink = linkTf.getText();
+                Product product = new Product(newTitle, newDiscount, newLink);
+
+                try {
+                    viewmodel.addItem(product);
+                } catch (MVVMdemoException ex) {
+                    ex.printStackTrace();
+                }
             }
 
         });

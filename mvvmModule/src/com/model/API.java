@@ -47,17 +47,29 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
     }
 
    public void sendPOST(String myRequest, Product product) throws IOException, InterruptedException {
-       String json = new StringBuilder()//TODO create from product
-               .append("{")
-               .append("\"name\":\"mkyong\",")
-               .append("\"notes\":\"hello\"")
-               .append("}").toString();
 
-       HttpRequest request = HttpRequest.newBuilder()
-               .POST(HttpRequest.BodyPublishers.ofString(json))
-               .uri(URI.create(myRequest))
-               .setHeader("User-Agent", "Java 11 HttpClient Bot")// add request header
-                .build();
+       OkHttpClient client = new OkHttpClient().newBuilder()
+               .build();
+       MediaType mediaType = MediaType.parse("application/json");
+       RequestBody body = RequestBody.create(mediaType, "\r\n{\r\n    \"title\": \"Lenovo Chromobook 11.6\",\r\n    \"couponName\": \"Lenovo - 100e 11.6\\\" Chromebook - MediaTek MT8173C - 4GB Memory - 32GB eMMC Flash Memory - Black\",\r\n  \r\n    \"link\": \"https://api.bestbuy.com/click/-/6341812/pdp\",\r\n  \r\n    \"discount\": \"20%\"\r\n}");
+       Request request = new Request.Builder()
+               .url("https://koupon.chepa.net/api/coupon/addCoupon")
+               .method("POST", body)
+               .addHeader("Content-Type", "application/json")
+               .build();
+       Response response = client.newCall(request).execute();
+
+//       String json = new StringBuilder()//TODO create from product
+//               .append("{")
+//               .append("\"name\":\"mkyong\",")
+//               .append("\"notes\":\"hello\"")
+//               .append("}").toString();
+//
+//       HttpRequest request = HttpRequest.newBuilder()
+//               .POST(HttpRequest.BodyPublishers.ofString(json))
+//               .uri(URI.create(myRequest))
+//               .setHeader("User-Agent", "Java 11 HttpClient Bot")// add request header
+//                .build();
    }
     public String sendPost( String name, String pass) throws Exception {
 

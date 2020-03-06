@@ -38,22 +38,8 @@ public class Model implements IModel {
 
     @Override
     public String login(String name, String pass) throws MVVMdemoException, Exception {
-        String result = api.sendPost(name, pass);
-
-//        JSONArray obj = new JSONArray(result);
-//        Product[] coupons = new Product[obj.length()];
-//
-//        for (int i = 0; i < obj.length(); i++) {
-//            String id = obj.getJSONObject(i).getString("_id");
-//            String title = obj.getJSONObject(i).getString("title");
-//            String discount = obj.getJSONObject(i).getString("discount");
-//            String couponName = obj.getJSONObject(i).getString("couponName");
-//            Product coupon = new Product(title, 666, couponName); //TODO price fix
-//            coupons[i] = coupon;
-//            //System.out.println(obj.getJSONObject(i).getString("couponName"));
-//        }
-
-        return "Hello";
+        boolean result = api.login(name, pass);
+        return "Nice";
 
     }
 
@@ -89,9 +75,7 @@ public class Model implements IModel {
     }
     @Override
     public void postItem(Product product) throws Exception {
-//        boolean result = api.sendPOST("http://koupon.chepa.net/api/coupon/addCoupon");
-        api.sendPOST("http://koupon.chepa.net/api/coupon/addCoupon", product);
-
+        boolean res = api.postItem("http://koupon.chepa.net/api/coupon/addCoupon", product);
     }
 
 

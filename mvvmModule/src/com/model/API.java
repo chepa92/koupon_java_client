@@ -17,90 +17,77 @@ import java.util.Map;
 
 public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
-//    cm.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-//    CookieHandler.setDefault(cm);
+    static OkHttpClient client = new OkHttpClient().newBuilder().build();
+    public static String cookie;
+
+
     private final HttpClient httpClient = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
             .build();
 
 
-    public String sendGET(String myRequest) throws Exception {
+    public String sendGET(String url) throws Exception {
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .uri(URI.create(myRequest))
-                .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
+        Request request = new Request.Builder()
+                .url(url)
+                .method("GET", null)
+                .addHeader("Cookie", cookie)
                 .build();
-
-
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-//         print response headers
-        HttpHeaders headers = response.headers();
-        headers.map().forEach((k, v) -> System.out.println(k + ":" + v)); //TODO get cookie form here
-
-//         print status code
-        System.out.println(response.statusCode());
-
-//         print response body
-        System.out.println(response.body());
-        return(response.body());
+        Response response = client.newCall(request).execute();
+        String some = response.body().string();
+        return some;
     }
 
-   public void sendPOST(String myRequest, Product product) throws IOException, InterruptedException {
-
-       OkHttpClient client = new OkHttpClient().newBuilder()
-               .build();
-       MediaType mediaType = MediaType.parse("application/json");
-       RequestBody body = RequestBody.create(mediaType, "\r\n{\r\n    \"title\": \"Lenovo Chromobook 11.6\",\r\n    \"couponName\": \"Lenovo - 100e 11.6\\\" Chromebook - MediaTek MT8173C - 4GB Memory - 32GB eMMC Flash Memory - Black\",\r\n  \r\n    \"link\": \"https://api.bestbuy.com/click/-/6341812/pdp\",\r\n  \r\n    \"discount\": \"20%\"\r\n}");
-       Request request = new Request.Builder()
-               .url("https://koupon.chepa.net/api/coupon/addCoupon")
-               .method("POST", body)
-               .addHeader("Content-Type", "application/json")
-               .build();
-       Response response = client.newCall(request).execute();
-
-//       String json = new StringBuilder()//TODO create from product
-//               .append("{")
-//               .append("\"name\":\"mkyong\",")
-//               .append("\"notes\":\"hello\"")
-//               .append("}").toString();
-//
-//       HttpRequest request = HttpRequest.newBuilder()
-//               .POST(HttpRequest.BodyPublishers.ofString(json))
-//               .uri(URI.create(myRequest))
-//               .setHeader("User-Agent", "Java 11 HttpClient Bot")// add request header
-//                .build();
-   }
-    public String sendPost( String name, String pass) throws Exception {
-
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-
+    public boolean login(String name, String pass) throws Exception {
 
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType, "{\"username\":\"admin\",\"password\":\"admin\"}");
+
         Request request = new Request.Builder()
-                .url("https://koupon.chepa.net/api/login?access_token=s%3AV2Zf-rFyRyjXAzCcnVU5HUckwO_WBGlY.tDExjzKFiEMVSUNpXt60R1tBm3bSETTFNF8UDK7y9Iw")
+                .url("https://koupon.chepa.net/api/login?access_token=s%3AV2Zf-rFyRyjXAzCcnVU5HUckwO_WBGlY.tDExjzKFiEMVSUNpXt60R1tBm3bSETTFNF8UDK7y9Ic")
                 .method("POST", body)
                 .addHeader("Content-Type", "application/json")
                 .build();
         Response response = client.newCall(request).execute();
-        String some = response.body().string();
+        cookie = response.header("set-cookie");
 
-
-
-        Request request1 = new Request.Builder()
-                .url("https://koupon.chepa.net/api/secret")
-                .method("GET", null)
-                .addHeader("Cookie", "connect.sid=s%3AvjjjMd1gu9z6jtfzSpaWV69E-tbsceay.0Qx%2Bb9sfqXTpl4%2Bv7V2%2BeXa3w%2BVMOsDlpwdMV9aGNHo")
-                .build();
-        Response response1 = client.newCall(request1).execute();
-        String some1 = response1.body().string();
-
-        System.out.println("hey");
-        return ("Failed");
+        if (cookie != null) {
+            return true;
+        }
+        return false;
 
     }
+
+    public boolean postItem(String url, Product product) throws Exception {
+
+        Request request = new Request.Builder()
+                .url(url)
+                .method("POST", null)
+                .addHeader("Cookie", cookie)
+                .build();
+        Response response = client.newCall(request).execute();
+        String some = response.body().string();
+        if (response != null) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean sendPost(String url, String other) throws Exception {
+        Request request = new Request.Builder()
+                .url(url)
+                .method("POST", null)
+                .addHeader("Cookie", cookie)
+                .build();
+        Response response = client.newCall(request).execute();
+        String some = response.body().string();
+
+        if (response != null) {
+            return true;
+        }
+        return false;
+    }
+
 
     private static HttpRequest.BodyPublisher buildFormDataFromMap(Map<Object, Object> data) {
         var builder = new StringBuilder();

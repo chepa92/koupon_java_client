@@ -6,6 +6,7 @@ import com.model.Product;
 import com.view.IView;
 
 import javax.swing.*;
+import java.net.MalformedURLException;
 import java.util.NoSuchElementException;
 
 public class ViewModel implements IViewModel {
@@ -139,7 +140,7 @@ public class ViewModel implements IViewModel {
                         public void run() {
                             try {
                                 view.showItem(p);
-                            } catch (MVVMdemoException e) {
+                            } catch (MVVMdemoException | MalformedURLException e) {
                                 e.printStackTrace();
                             }
                         }
@@ -171,7 +172,7 @@ public class ViewModel implements IViewModel {
                         public void run() {
                             try {
                                 view.showItem(product);
-                            } catch (MVVMdemoException e) {
+                            } catch (MVVMdemoException | MalformedURLException e) {
                                 e.printStackTrace();
                             }
                         }

@@ -21,7 +21,8 @@ public class Model implements IModel {
             String title = obj.getJSONObject(i).getString("title");
             String discount = obj.getJSONObject(i).getString("discount");
             String link = obj.getJSONObject(i).getString("link");
-            Product coupon = new Product(id, title, discount, link); //TODO price fix
+            String img = obj.getJSONObject(i).getString("imgUrl");
+            Product coupon = new Product(id, title, discount, link, img); //TODO price fix
             coupons[i] = coupon;
             //System.out.println(obj.getJSONObject(i).getString("couponName"));
         }

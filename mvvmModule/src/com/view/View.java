@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class View implements IView {
 
@@ -190,7 +192,7 @@ public class View implements IView {
 //               viewmodel.getItem(list.getSelectedValue().getId());
             try {
                 this.showItem(p);
-            } catch (MVVMdemoException ex) {
+            } catch (MVVMdemoException | MalformedURLException ex) {
                 ex.printStackTrace();
             }
         });
@@ -218,10 +220,26 @@ public class View implements IView {
     }
 
     @Override
-    public void showItem(Product item) throws MVVMdemoException {
+    public void showItem(Product item) throws MVVMdemoException, MalformedURLException {
+
+
+
+
         lable.setText("Name: " + item.getTitle() );
         lable1.setText("Discount: " + item.getDiscount() );
         lable2.setText("Link: " + item.getLink() );
+        URL url = new URL(item.getImg());
+        ImageIcon heroShotImage = new ImageIcon(url);
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
+        JPanel heroShotPanel = new JPanel();
+        JLabel heroShot = new JLabel(imageIcon);
+        heroShotPanel.add(heroShot);
+        this.panel.add(heroShot);
+        System.out.println("size");
+
+
+
+
     }
 
     @Override

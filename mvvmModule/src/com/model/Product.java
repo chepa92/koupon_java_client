@@ -5,18 +5,22 @@ public class Product {
     String title;
     String discount;
     String link;
+    String img;
 
-    public Product(String id, String title, String discount, String link) {
+    public Product(String id, String title, String discount, String link, String img) {
         this.setId(id);
         this.setTitle(title);
         this.setDiscount(discount);
         this.setLink(link);
+        this.setImg(img);
     }
-    public Product( String title, String discount, String link) {
+
+    public Product(String title, String discount, String link) {
         this.setTitle(title);
         this.setDiscount(discount);
         this.setLink(link);
     }
+
     public String getId() {
         return id;
     }
@@ -49,9 +53,16 @@ public class Product {
         this.link = link;
     }
 
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     @Override
     public String toString() {
         return title;
     }
 
+    public String getImg() {
+        return img;
+    }
 }

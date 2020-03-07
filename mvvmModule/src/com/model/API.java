@@ -1,31 +1,42 @@
 package com.model;
 
 import okhttp3.*;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.FileAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.SimpleLayout;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.*;
-import java.net.http.HttpClient;
+import java.net.URLEncoder;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpHeaders;
-import java.net.URI;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
-
-import java.util.HashMap;
 import java.util.Map;
 
-public class API { //https://mkyong.com/java/java-11-httpclient-examples/
+public class API {
 
     static OkHttpClient client = new OkHttpClient().newBuilder().build();
     public static String cookie;
 
+    static Logger log = Logger.getLogger("API");
 
-    private final HttpClient httpClient = HttpClient.newBuilder()
-            .version(HttpClient.Version.HTTP_2)
-            .build();
+    public API() {
+        System.out.println("WTF");
+        BasicConfigurator.configure();
+        try{
+            log.addAppender(new FileAppender(new SimpleLayout(), "output.log"));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        log.debug("This is debug message"); //TODO - add logger
+        log.info("This is info message"); //THIS IS AN EXAMPLE
+        log.warn("This is warn message");
+        log.fatal("This is fatal message");
+        log.error("This is error message");
+    }
 
 
     public String sendGET(String url) throws Exception {
@@ -42,6 +53,7 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
     public boolean login(String name, String pass) throws Exception {
 
+        System.out.println("Logic executed successfully....");
         System.out.println(name);
         JSONObject jsonObject = new JSONObject();
         try {
@@ -105,7 +117,6 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
             e.printStackTrace();
         }
 
-        OkHttpClient client = new OkHttpClient();
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         // put your json here
         RequestBody body = RequestBody.create(JSON, jsonObject.toString());

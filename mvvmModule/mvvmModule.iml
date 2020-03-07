@@ -10,5 +10,6 @@
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="json-20190722" level="project" />
     <orderEntry type="library" name="com.squareup.okhttp3:okhttp:4.4.0" level="project" />
+    <orderEntry type="library" name="log4j-1.2.15" level="project" />
   </component>
 </module>

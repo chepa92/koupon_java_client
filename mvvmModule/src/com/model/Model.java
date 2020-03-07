@@ -86,7 +86,8 @@ public class Model implements IModel {
     }
 
     @Override
-    public void deleteItem() throws MVVMdemoException {
+    public void deleteItem(String item) throws Exception {
+        boolean res = api.deleteItem(item);
 
     }
 }

@@ -28,7 +28,7 @@ public class View implements IView {
     JScrollPane scrollPane;
     IViewModel viewmodel;
     JSeparator separator;
-
+    static String current_id;
 
     public IViewModel getViewmodel() {
         return viewmodel;
@@ -178,12 +178,16 @@ public class View implements IView {
 
         });
 
-//        bt1.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                viewmodel.addItem("Hello");
-//            }
-//        });
+        bt2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    viewmodel.deleteItem(current_id);
+                } catch (MVVMdemoException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
 
 
 
@@ -222,9 +226,7 @@ public class View implements IView {
     @Override
     public void showItem(Product item) throws MVVMdemoException, MalformedURLException {
 
-
-
-
+        current_id = item.getId();
         lable.setText("Name: " + item.getTitle() );
         lable1.setText("Discount: " + item.getDiscount() );
         lable2.setText("Link: " + item.getLink() );
@@ -236,9 +238,6 @@ public class View implements IView {
         heroShotPanel.add(heroShot);
         this.panel.add(heroShot);
         System.out.println("size");
-
-
-
 
     }
 

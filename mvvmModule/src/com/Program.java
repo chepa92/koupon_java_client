@@ -9,6 +9,7 @@ import com.viewModel.IViewModel;
 import com.viewModel.ViewModel;
 
 import javax.swing.*;
+import java.net.MalformedURLException;
 
 public class Program {
     public static void main(String[] args) throws MVVMdemoException {
@@ -18,7 +19,12 @@ public class Program {
             @Override
             public void run() {
                 IModel m = new Model();
-                IView v = new View();
+                IView v = null;
+                try {
+                    v = new View();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
                 v.start();
                 IViewModel vm = new ViewModel();
                 v.setViewModel(vm);

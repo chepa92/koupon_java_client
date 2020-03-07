@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class View implements IView {
+public class View implements IView  {
 
     JFrame loginFrame;
    JFrame frame, formFrame;
@@ -30,6 +30,8 @@ public class View implements IView {
     IViewModel viewmodel;
     JSeparator separator;
     static String current_id;
+    ImageIcon imageIcon;
+    JLabel heroShot;
 
     public IViewModel getViewmodel() {
         return viewmodel;
@@ -40,7 +42,7 @@ public class View implements IView {
     }
 
 
-    public View(){
+    public View() throws MalformedURLException {
         loginFrame = new JFrame("Login:");
         loginPanel = new JPanel();
         formFrame = new JFrame("Add new coupon");
@@ -78,6 +80,9 @@ public class View implements IView {
 
         separator = new JSeparator(SwingConstants.VERTICAL);
 
+        URL url = new URL( "http://www.pptback.com/broken-glass-effects-pptbackground.html");
+        imageIcon = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
+        heroShot = new JLabel(imageIcon);
 
 
     }
@@ -125,6 +130,8 @@ public class View implements IView {
         panel.add(lable);
         panel.add(lable1);
         panel.add(lable2);
+        panel.add(heroShot);
+
         splitPane.setRightComponent(panel);
 
         navPanel.add(bt2);
@@ -132,6 +139,7 @@ public class View implements IView {
         navPanel.add(bt);
         navPanel.add(bt1);
         navPanel.add(bt3);
+
 
 //        frame.setLayout(new FlowLayout());
         frame.add(navPanel, BorderLayout.NORTH);
@@ -240,24 +248,22 @@ public class View implements IView {
         lable.setText("Name: " + item.getTitle() );
         lable1.setText("Discount: " + item.getDiscount() );
         lable2.setText("Link: " + item.getLink() );
-        URL url = new URL(item.getImg());
-        ImageIcon heroShotImage = new ImageIcon(url);
-        ImageIcon imageIcon = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
-        JPanel heroShotPanel = new JPanel();
-        JLabel heroShot = new JLabel(imageIcon);
-        heroShotPanel.add(heroShot);
-        this.panel.add(heroShot);
+        URL url2 = new URL(item.getImg());
+//        ImageIcon heroShotImage = new ImageIcon(url);
+         imageIcon = new ImageIcon(new ImageIcon(url2).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
+         heroShot.setIcon(imageIcon);
+//        panel.add(heroShot);
         System.out.println("size");
+//        JPanel heroShotPanel = new JPanel();
+//        heroShotPanel.add(heroShot);
 
     }
 
     @Override
     public void showItems(Product[] items) throws MVVMdemoException {
-    /*    String str = "items:";
-        for (String item : items){
-             str += "..." + item;
-        }
-        tf.setText(str);*/
+   if(model.getSize() > 0){
+       model.removeAllElements();
+   }
     for(Product item: items){
         model.addElement(item);
     }

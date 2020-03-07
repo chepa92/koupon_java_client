@@ -4,7 +4,9 @@ import com.viewModel.IViewModel;
 import com.MVVMdemoException;
 import com.model.Product;
 
+import javax.swing.SpringLayout;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,7 +24,6 @@ public class View implements IView {
     JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink;
     JPanel panel;
     JPanel loginPanel, formPanel;
-    JPanel searchPanel;
     JPanel navPanel;
     JSplitPane splitPane;
     JScrollPane scrollPane;
@@ -42,14 +43,14 @@ public class View implements IView {
     public View(){
         loginFrame = new JFrame("Login:");
         loginPanel = new JPanel();
-        formFrame = new JFrame();
+        formFrame = new JFrame("Add new coupon");
         formPanel = new JPanel();
         nametf = new JTextField(20);
         passtf =new JTextField(20);
         titleTf = new JTextField(20);
         discountTf = new JTextField(20);
         linkTf = new JTextField(20);
-        frame = new JFrame("Computers Storage");
+        frame = new JFrame("Koupon");
         list = new JList<>();
         model = new DefaultListModel<>();
         panel = new JPanel();
@@ -70,7 +71,6 @@ public class View implements IView {
         bt1 = new JButton("Add new coupon");
         bt2 = new JButton("Delete");
         bt3 = new JButton("Update");
-//        bt4 = new JButton("Search");
         bt5 = new JButton("Login");
         bt6 = new JButton("Save");
 
@@ -93,7 +93,12 @@ public class View implements IView {
         loginFrame.add(loginPanel, BorderLayout.CENTER);
 
         //Form panel elements
-        formPanel.setSize(250,300);
+        formFrame.setSize(300,300);
+        SpringLayout layout = new SpringLayout();
+        BoxLayout boxLayout = new BoxLayout(formPanel, BoxLayout.Y_AXIS);
+        formPanel.setLayout(boxLayout);
+        formPanel.setBorder(new EmptyBorder(new Insets(50, 50, 50, 50)));
+
 
         formPanel.add(lblTitle);
         formPanel.add(titleTf);
@@ -101,18 +106,14 @@ public class View implements IView {
         formPanel.add(discountTf);
         formPanel.add(lblLink);
         formPanel.add(linkTf);
+        formPanel.add(Box.createRigidArea(new Dimension(0, 60)));
         formPanel.add(bt6);
 
-        formPanel.setLayout(new FlowLayout());
-        formFrame.setSize(300,300);
         formFrame.add(formPanel);
+        formFrame.pack();
 
-
-//        formFrame.add(formPanel, BorderLayout.CENTER);
-
+        //Main Dashboard elements
         list.setModel(model);
-//        searchPanel.add(bt4);
- //       searchPanel.add(tf);
 
         panel.setSize(300, 500);
         splitPane.setLeftComponent(scrollPane);
@@ -123,7 +124,6 @@ public class View implements IView {
         splitPane.setRightComponent(panel);
 
         navPanel.add(bt2);
-//        navPanel.add(tf);
         navPanel.add(separator);
         navPanel.add(bt);
         navPanel.add(bt1);

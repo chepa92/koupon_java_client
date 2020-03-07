@@ -19,7 +19,6 @@ public class Product {
         this.setTitle(title);
         this.setDiscount(discount);
         this.setLink(link);
-        this.setImg("https://codelabs.developers.google.com/codelabs/kotlin-android-training-internet-images/");
     }
 
     public String getId() {

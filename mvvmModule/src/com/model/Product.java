@@ -15,10 +15,11 @@ public class Product {
         this.setImg(img);
     }
 
-    public Product(String title, String discount, String link) {
+    public Product(String title, String discount, String link, String img) {
         this.setTitle(title);
         this.setDiscount(discount);
         this.setLink(link);
+        this.setImg(img);
     }
 
     public String getId() {

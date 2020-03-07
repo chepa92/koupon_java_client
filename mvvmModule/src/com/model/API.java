@@ -87,6 +87,7 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
             jsonObject.put("title", product.getTitle());
             jsonObject.put("discount", product.getDiscount());
             jsonObject.put("link", product.getLink());
+            jsonObject.put("imgUrl", product.getImg());
 
         } catch (JSONException e) {
             e.printStackTrace();

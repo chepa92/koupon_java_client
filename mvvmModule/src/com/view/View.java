@@ -18,10 +18,10 @@ public class View implements IView {
     JFrame loginFrame;
    JFrame frame, formFrame;
     JButton bt, bt1, bt2, bt3, bt4, bt5, bt6;
-    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf ;
+    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf , imgTf;
     JList<Product> list;
     DefaultListModel<Product> model;
-    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink;
+    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink, lblImg;
     JPanel panel;
     JPanel loginPanel, formPanel;
     JPanel navPanel;
@@ -50,6 +50,7 @@ public class View implements IView {
         titleTf = new JTextField(20);
         discountTf = new JTextField(20);
         linkTf = new JTextField(20);
+        imgTf = new JTextField(30);
         frame = new JFrame("Koupon");
         list = new JList<>();
         model = new DefaultListModel<>();
@@ -66,6 +67,7 @@ public class View implements IView {
         lblTitle = new JLabel("Title: ");
         lblDiscount = new JLabel("Discount: ");
         lblLink = new JLabel("Link: ");
+        lblImg = new JLabel("Img Link: ");
         tf = new JTextField(20);
         bt = new JButton("See All Items");
         bt1 = new JButton("Add new coupon");
@@ -106,6 +108,8 @@ public class View implements IView {
         formPanel.add(discountTf);
         formPanel.add(lblLink);
         formPanel.add(linkTf);
+        formPanel.add(lblImg);
+        formPanel.add(imgTf);
         formPanel.add(Box.createRigidArea(new Dimension(0, 60)));
         formPanel.add(bt6);
 
@@ -169,7 +173,13 @@ public class View implements IView {
                 String newTitle = titleTf.getText();
                 String newDiscount = discountTf.getText();
                 String newLink = linkTf.getText();
-                Product product = new Product(newTitle, newDiscount, newLink);
+                String ImgLink ;
+                if(imgTf.getText().equals("")){
+                     ImgLink = "http://www.pptback.com/broken-glass-effects-pptbackground.html";
+                }else{
+                     ImgLink = imgTf.getText();
+                }
+                Product product = new Product(newTitle, newDiscount, newLink, ImgLink);
                 viewmodel.postCoupon(product);
                 formFrame.setVisible(false);
 

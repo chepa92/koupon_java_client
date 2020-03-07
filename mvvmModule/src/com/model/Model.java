@@ -41,7 +41,10 @@ public class Model implements IModel {
     public String postCoupon(Product product) throws Exception {
         boolean result = api.postItem("https://koupon.chepa.net/api/secret", product);
 
-        return "Hello";
+        if (result){
+            return "POST-Success";
+        }
+        return "Failed";
 
     }
 

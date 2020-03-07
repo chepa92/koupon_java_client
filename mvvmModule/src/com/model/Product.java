@@ -19,6 +19,7 @@ public class Product {
         this.setTitle(title);
         this.setDiscount(discount);
         this.setLink(link);
+        this.setImg("https://codelabs.developers.google.com/codelabs/kotlin-android-training-internet-images/");
     }
 
     public String getId() {
@@ -56,13 +57,14 @@ public class Product {
     public void setImg(String img) {
         this.img = img;
     }
+    public String getImg() {
+        return img;
+    }
 
     @Override
     public String toString() {
         return title;
     }
 
-    public String getImg() {
-        return img;
-    }
+
 }

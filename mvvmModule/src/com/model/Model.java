@@ -32,10 +32,10 @@ public class Model implements IModel {
     }
 
     @Override
-    public String login(String name, String pass) throws MVVMdemoException, Exception {
+    public Boolean login(String name, String pass) throws MVVMdemoException, Exception {
         boolean result = api.login(name, pass);
-        return "Nice";
 
+        return result;
     }
 
     public String postCoupon(Product product) throws Exception {

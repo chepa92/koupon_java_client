@@ -17,4 +17,6 @@ public interface IView {
     public void start();
 
     public void loginSucces(String name);
+    public void loginFail();
+
 }

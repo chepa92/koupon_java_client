@@ -16,7 +16,7 @@ public interface IModel {
 
 
 //    void postItems(Product product);
-    public String login(String name, String pass) throws MVVMdemoException, Exception;
+    public Boolean login(String name, String pass) throws MVVMdemoException, Exception;
 
     public String postCoupon(Product product) throws MVVMdemoException, Exception;
 }

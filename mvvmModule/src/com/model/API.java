@@ -42,18 +42,30 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
     public boolean login(String name, String pass) throws Exception {
 
-        MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, "{\"username\":\"admin\",\"password\":\"admin\"}"); //TODO - add real name/pass
+        System.out.println(name);
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("username", name);
+            jsonObject.put("password", pass);
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        OkHttpClient client = new OkHttpClient();
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(JSON, jsonObject.toString());
+
+//        System.out.println(body);
         Request request = new Request.Builder()
-                .url("https://koupon.chepa.net/api/login?access_token=s%3AV2Zf-rFyRyjXAzCcnVU5HUckwO_WBGlY.tDExjzKFiEMVSUNpXt60R1tBm3bSETTFNF8UDK7y9Ic")
+                .url("https://koupon.chepa.net/api/login")
                 .method("POST", body)
                 .addHeader("Content-Type", "application/json")
                 .build();
         Response response = client.newCall(request).execute();
         cookie = response.header("set-cookie");
+        System.out.println(response.code());
 
-        if (cookie != null) {
+        if (response.code() == 200) {
             return true;
         }
         return false;

@@ -3,6 +3,7 @@ package com.view;
 import com.viewModel.IViewModel;
 import com.MVVMdemoException;
 import com.model.Product;
+import kotlin.reflect.jvm.internal.impl.serialization.deserialization.ClassDataFinder;
 
 import javax.swing.SpringLayout;
 import javax.swing.*;
@@ -21,8 +22,8 @@ public class View implements IView  {
     JTextField tf, nametf, passtf, titleTf, discountTf, linkTf , imgTf;
     JList<Product> list;
     DefaultListModel<Product> model;
-    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink, lblImg;
-    JPanel panel;
+    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink, lblImg, lblStatus;
+    JPanel panel, statusPanel;
     JPanel loginPanel, formPanel;
     JPanel navPanel;
     JSplitPane splitPane;
@@ -47,6 +48,7 @@ public class View implements IView  {
         loginPanel = new JPanel();
         formFrame = new JFrame("Add new coupon");
         formPanel = new JPanel();
+        statusPanel = new JPanel();
         nametf = new JTextField(20);
         passtf =new JTextField(20);
         titleTf = new JTextField(20);
@@ -57,7 +59,6 @@ public class View implements IView  {
         list = new JList<>();
         model = new DefaultListModel<>();
         panel = new JPanel();
-       // searchPanel = new JPanel();
         navPanel = new JPanel();
         splitPane = new JSplitPane();
         scrollPane = new JScrollPane(list);
@@ -70,6 +71,7 @@ public class View implements IView  {
         lblDiscount = new JLabel("Discount: ");
         lblLink = new JLabel("Link: ");
         lblImg = new JLabel("Img Link: ");
+        lblStatus = new JLabel();
         tf = new JTextField(20);
         bt = new JButton("See All Items");
         bt1 = new JButton("Add new coupon");
@@ -97,7 +99,10 @@ public class View implements IView  {
         loginPanel.add(passtf);
 
         loginPanel.add(bt5);
+        statusPanel.add(lblStatus);
         loginFrame.add(loginPanel, BorderLayout.CENTER);
+        loginFrame.add(statusPanel, BorderLayout.NORTH);
+
 
         //Form panel elements
         formFrame.setSize(300,300);
@@ -141,10 +146,8 @@ public class View implements IView  {
         navPanel.add(bt3);
 
 
-//        frame.setLayout(new FlowLayout());
         frame.add(navPanel, BorderLayout.NORTH);
         frame.add(splitPane, BorderLayout.CENTER);
-        //frame.add(searchPanel, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 
@@ -164,8 +167,7 @@ public class View implements IView  {
             }
         });
 
-        //add new coupon button
-
+        //Add new coupon button
         bt1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -219,7 +221,6 @@ public class View implements IView  {
             }
         });
 
-        // frame.pack();
         frame.setVisible(false);
         formFrame.setVisible(false);
         frame.setSize(600,400);
@@ -231,8 +232,16 @@ public class View implements IView  {
 
     @Override
     public void loginSucces(String name) {
+        lblStatus.setText("Welcome" + name);
         frame.setVisible(true);
         loginFrame.setVisible(false);
+
+    }
+
+    @Override
+    public void loginFail() {
+        lblStatus.setForeground(Color.red);
+        lblStatus.setText("Incorrect User Name or Password");
 
     }
 
@@ -249,13 +258,10 @@ public class View implements IView  {
         lable1.setText("Discount: " + item.getDiscount() );
         lable2.setText("Link: " + item.getLink() );
         URL url2 = new URL(item.getImg());
-//        ImageIcon heroShotImage = new ImageIcon(url);
          imageIcon = new ImageIcon(new ImageIcon(url2).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
          heroShot.setIcon(imageIcon);
-//        panel.add(heroShot);
         System.out.println("size");
-//        JPanel heroShotPanel = new JPanel();
-//        heroShotPanel.add(heroShot);
+
 
     }
 

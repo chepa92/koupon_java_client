@@ -17,18 +17,12 @@ public class ViewModel implements IViewModel {
         this.view = view;
     }
 
-//    @Override
-//    public void login() {
-//
-//    }
 
     public void setModel(IModel model) {
         this.model = model;
     }
 
-    //    public ViewModel{
-//        this.view = setModel();
-//    }
+
     @Override
     public void login(String name, String pass) {
         new Thread(new Runnable() {
@@ -36,17 +30,19 @@ public class ViewModel implements IViewModel {
             public void run() {
 
                 try {
-                    String string = model.login(name, pass);
-//                    String []texts= model.getItemsNames();
+                    Boolean statusLogin = model.login(name, pass);
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
                         public void run() {
                             try {
-                                view.loginSucces(name);
+                                if(statusLogin) {
+                                    view.loginSucces(name);
+                                }else{
+                                    view.loginFail();
+                                }
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                            System.out.println("Login");
                         }
                     });
 

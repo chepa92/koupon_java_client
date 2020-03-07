@@ -4,9 +4,7 @@ import com.viewModel.IViewModel;
 import com.MVVMdemoException;
 import com.model.Product;
 
-import javax.swing.SpringLayout;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,18 +16,19 @@ public class View implements IView {
     JFrame loginFrame;
    JFrame frame, formFrame;
     JButton bt, bt1, bt2, bt3, bt4, bt5, bt6;
-    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf, imgTf ;
+    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf ;
     JList<Product> list;
     DefaultListModel<Product> model;
-    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink, lblImg;
+    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink;
     JPanel panel;
     JPanel loginPanel, formPanel;
+    JPanel searchPanel;
     JPanel navPanel;
     JSplitPane splitPane;
     JScrollPane scrollPane;
     IViewModel viewmodel;
     JSeparator separator;
-
+    static String current_id;
 
     public IViewModel getViewmodel() {
         return viewmodel;
@@ -43,15 +42,14 @@ public class View implements IView {
     public View(){
         loginFrame = new JFrame("Login:");
         loginPanel = new JPanel();
-        formFrame = new JFrame("Add new coupon form");
+        formFrame = new JFrame();
         formPanel = new JPanel();
         nametf = new JTextField(20);
         passtf =new JTextField(20);
         titleTf = new JTextField(20);
         discountTf = new JTextField(20);
-        linkTf = new JTextField(30);
-        imgTf = new JTextField(30);
-        frame = new JFrame("Koupon");
+        linkTf = new JTextField(20);
+        frame = new JFrame("Computers Storage");
         list = new JList<>();
         model = new DefaultListModel<>();
         panel = new JPanel();
@@ -67,7 +65,6 @@ public class View implements IView {
         lblTitle = new JLabel("Title: ");
         lblDiscount = new JLabel("Discount: ");
         lblLink = new JLabel("Link: ");
-        lblImg = new JLabel("Img Link: ");
         tf = new JTextField(20);
         bt = new JButton("See All Items");
         bt1 = new JButton("Add new coupon");
@@ -95,31 +92,28 @@ public class View implements IView {
         loginPanel.add(bt5);
         loginFrame.add(loginPanel, BorderLayout.CENTER);
 
-        //Form panel elements*/////////
-        formFrame.setSize(300,300);
-        SpringLayout layout = new SpringLayout();
-
-        BoxLayout boxLayout = new BoxLayout(formPanel, BoxLayout.Y_AXIS);
-        formPanel.setLayout(boxLayout);
-        formPanel.setBorder(new EmptyBorder(new Insets(50, 50, 50, 50)));
+        //Form panel elements
+        formPanel.setSize(250,300);
 
         formPanel.add(lblTitle);
         formPanel.add(titleTf);
-
         formPanel.add(lblDiscount);
         formPanel.add(discountTf);
         formPanel.add(lblLink);
         formPanel.add(linkTf);
-//        formPanel.add(lblImg);
-//        formPanel.add(imgTf);
-        formPanel.add(Box.createRigidArea(new Dimension(0, 60)));
         formPanel.add(bt6);
 
+        formPanel.setLayout(new FlowLayout());
+        formFrame.setSize(300,300);
         formFrame.add(formPanel);
-        formFrame.pack();
 
-        //Main Deshboard elements
+
+//        formFrame.add(formPanel, BorderLayout.CENTER);
+
         list.setModel(model);
+//        searchPanel.add(bt4);
+ //       searchPanel.add(tf);
+
         panel.setSize(300, 500);
         splitPane.setLeftComponent(scrollPane);
         splitPane.setSize(200, 500);
@@ -129,13 +123,16 @@ public class View implements IView {
         splitPane.setRightComponent(panel);
 
         navPanel.add(bt2);
+//        navPanel.add(tf);
         navPanel.add(separator);
         navPanel.add(bt);
         navPanel.add(bt1);
         navPanel.add(bt3);
 
+//        frame.setLayout(new FlowLayout());
         frame.add(navPanel, BorderLayout.NORTH);
         frame.add(splitPane, BorderLayout.CENTER);
+        //frame.add(searchPanel, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 
@@ -181,12 +178,16 @@ public class View implements IView {
 
         });
 
-//        bt1.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                viewmodel.addItem("Hello");
-//            }
-//        });
+        bt2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    viewmodel.deleteItem(current_id);
+                } catch (MVVMdemoException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
 
 
 
@@ -225,6 +226,7 @@ public class View implements IView {
     @Override
     public void showItem(Product item) throws MVVMdemoException, MalformedURLException {
 
+        current_id = item.getId();
         lable.setText("Name: " + item.getTitle() );
         lable1.setText("Discount: " + item.getDiscount() );
         lable2.setText("Link: " + item.getLink() );

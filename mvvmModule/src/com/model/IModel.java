@@ -12,7 +12,7 @@ public interface IModel {
     public String[] getItemsPrice() throws MVVMdemoException;
     public String[] getItemsDesc() throws MVVMdemoException;
     public void addItem(String text) throws  MVVMdemoException;
-    public void deleteItem() throws MVVMdemoException;
+    public void deleteItem(String item) throws Exception;
 
 
 //    void postItems(Product product);

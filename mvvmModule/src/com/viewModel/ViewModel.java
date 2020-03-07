@@ -192,7 +192,19 @@ public class ViewModel implements IViewModel {
     }
 
     @Override
-    public void deleteItem() throws MVVMdemoException {
+    public void deleteItem(String item_id) throws MVVMdemoException {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    model.deleteItem(item_id);
+                } catch (MVVMdemoException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
 
     }
 

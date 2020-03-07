@@ -13,7 +13,7 @@ public interface IViewModel {
 
     void addItem(Product product) throws MVVMdemoException;
 
-    public void deleteItem() throws MVVMdemoException;
+    public void deleteItem(String item_id) throws MVVMdemoException;
     public void setModel(IModel m) ;
     public void setView(IView v);
 

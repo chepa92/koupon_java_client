@@ -60,7 +60,25 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
 
     }
 
-    //Adding new coupon Request
+    public boolean deleteItem(String item) throws Exception {
+
+        MediaType mediaType = MediaType.parse("application/json");
+        RequestBody body = RequestBody.create(mediaType, "");
+        Request request = new Request.Builder()
+                .url("https://koupon.chepa.net/api/coupon/deleteCoupon?id="+ item)
+                .method("DELETE", body)
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Cookie", cookie)
+                .build();
+        Response response = client.newCall(request).execute();
+
+        if (response != null) {
+            return true;
+        }
+        return false;
+
+    }
+
     public boolean postItem(String url, Product product) throws Exception {
 
 
@@ -69,7 +87,6 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
             jsonObject.put("title", product.getTitle());
             jsonObject.put("discount", product.getDiscount());
             jsonObject.put("link", product.getLink());
-//            jsonObject.put("imgUrl", product.getImg());
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -94,7 +111,7 @@ public class API { //https://mkyong.com/java/java-11-httpclient-examples/
             e.printStackTrace();
         }
 
-//        System.out.println(response.body());
+
         if (response != null) {
             return true;
         }

@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/IModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" afterDir="false" />
-    </list>
+    <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

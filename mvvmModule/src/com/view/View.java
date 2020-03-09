@@ -1,11 +1,9 @@
 package com.view;
 
-import com.viewModel.IViewModel;
 import com.MVVMdemoException;
-import com.model.Product;
-import kotlin.reflect.jvm.internal.impl.serialization.deserialization.ClassDataFinder;
+import com.koupon.Product;
+import com.viewModel.IViewModel;
 
-import javax.swing.SpringLayout;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -14,12 +12,12 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class View implements IView  {
+public class View implements IView {
 
     JFrame loginFrame;
-   JFrame frame, formFrame, updateFrame;
+    JFrame frame, formFrame, updateFrame;
     JButton bt, bt1, bt2, bt3, bt4, bt5, bt6;
-    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf , imgTf;
+    JTextField tf, nametf, passtf, titleTf, discountTf, linkTf, imgTf;
     JTextField newTitle, newDiscount, newLink, newImg;
     JList<Product> list;
     DefaultListModel<Product> model;
@@ -31,7 +29,7 @@ public class View implements IView  {
     JScrollPane scrollPane;
     IViewModel viewmodel;
     JSeparator separator;
-     String current_id;
+    String current_id;
     ImageIcon imageIcon;
     JLabel heroShot;
 
@@ -53,7 +51,7 @@ public class View implements IView  {
         updatePanel = new JPanel();
         statusPanel = new JPanel();
         nametf = new JTextField(10);
-        passtf =new JTextField(10);
+        passtf = new JTextField(10);
         titleTf = new JTextField(30);
         discountTf = new JTextField(30);
         linkTf = new JTextField(30);
@@ -70,7 +68,7 @@ public class View implements IView  {
         splitPane = new JSplitPane();
         scrollPane = new JScrollPane(list);
         name = new JLabel("User Name");
-        pass= new JLabel("Password");
+        pass = new JLabel("Password");
         lable = new JLabel();
         lable1 = new JLabel();
         lable2 = new JLabel();
@@ -81,7 +79,7 @@ public class View implements IView  {
         lblStatus = new JLabel();
         lblTitle2 = new JLabel("Title: ");
         lblDiscount2 = new JLabel("Discount: ");
-        lblLink2  = new JLabel("Link: ");
+        lblLink2 = new JLabel("Link: ");
         lblImg2 = new JLabel("Img Link: ");
         lblStatus = new JLabel();
         lblStatus2 = new JLabel();
@@ -96,17 +94,17 @@ public class View implements IView  {
 
         separator = new JSeparator(SwingConstants.VERTICAL);
 
-        URL url = new URL( "http://www.pptback.com/broken-glass-effects-pptbackground.html");
+        URL url = new URL("http://www.pptback.com/broken-glass-effects-pptbackground.html");
         imageIcon = new ImageIcon(new ImageIcon(url).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
         heroShot = new JLabel(imageIcon);
 
 
     }
 
-    public void start(){
+    public void start() {
 
         //Login panel elements
-        loginPanel.setSize(300,500);
+        loginPanel.setSize(300, 500);
         loginPanel.add(name);
         loginPanel.add(nametf);
         loginPanel.add(pass);
@@ -119,7 +117,7 @@ public class View implements IView  {
 
 
         //Form panel elements
-        formFrame.setSize(300,300);
+        formFrame.setSize(300, 300);
         SpringLayout layout = new SpringLayout();
         BoxLayout boxLayout = new BoxLayout(formPanel, BoxLayout.Y_AXIS);
         formPanel.setLayout(boxLayout);
@@ -141,7 +139,7 @@ public class View implements IView  {
 
         //Update Form
 
-        updateFrame.setSize(300,300);
+        updateFrame.setSize(300, 300);
 //      SpringLayout layout = new SpringLayout();
         BoxLayout boxLayout2 = new BoxLayout(updatePanel, BoxLayout.Y_AXIS);
         updatePanel.setLayout(boxLayout2);
@@ -197,13 +195,13 @@ public class View implements IView  {
         bt5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String username= nametf.getText();
+                String username = nametf.getText();
                 String pass = passtf.getText();
                 viewmodel.login(username, pass);
             }
         });
 
-        //Add new coupon button
+        /** Adds new button */
         bt1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -211,7 +209,8 @@ public class View implements IView  {
             }
 
         });
-        //Update coupon
+
+        /** Update coupon */
         bt3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -219,7 +218,8 @@ public class View implements IView  {
             }
 
         });
-        //Update coupon button click handler
+
+        /** Update coupon button click handler */
         bt4.addActionListener(new ActionListener() {
 
             @Override
@@ -233,22 +233,21 @@ public class View implements IView  {
 
                 Product product = new Product(title, discount, link, img);
                 viewmodel.updateCoupon(id, product);
-//                updateFrame.setVisible(false);
             }
         });
 
-        //Save new coupon button handler
+        /** Save new coupon button handler*/
         bt6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String newTitle = titleTf.getText();
                 String newDiscount = discountTf.getText();
                 String newLink = linkTf.getText();
-                String ImgLink ;
-                if(imgTf.getText().equals("")){
-                     ImgLink = "http://www.pptback.com/broken-glass-effects-pptbackground.html";
-                }else{
-                     ImgLink = imgTf.getText();
+                String ImgLink;
+                if (imgTf.getText().equals("")) {
+                    ImgLink = "http://www.pptback.com/broken-glass-effects-pptbackground.html";
+                } else {
+                    ImgLink = imgTf.getText();
                 }
                 Product product = new Product(newTitle, newDiscount, newLink, ImgLink);
                 viewmodel.postCoupon(product);
@@ -256,7 +255,7 @@ public class View implements IView  {
             }
         });
 
-        //Delete coupon button handler
+        /** Delete coupon button handler */
         bt2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -268,9 +267,8 @@ public class View implements IView  {
             }
         });
 
-
         list.addListSelectionListener(e -> {
-                Product p = list.getSelectedValue();
+            Product p = list.getSelectedValue();
             try {
                 this.showItem(p);
             } catch (MVVMdemoException | MalformedURLException ex) {
@@ -280,9 +278,9 @@ public class View implements IView  {
 
         frame.setVisible(false);
         formFrame.setVisible(false);
-        frame.setSize(600,400);
+        frame.setSize(600, 400);
         loginFrame.setVisible(true);
-        loginFrame.setSize(600,400);
+        loginFrame.setSize(600, 400);
 
 
     }
@@ -319,6 +317,7 @@ public class View implements IView  {
         tf.setText(text);
     }
 
+    /** Shows items details */
     @Override
     public void showItem(Product item) throws MVVMdemoException, MalformedURLException {
 
@@ -329,30 +328,28 @@ public class View implements IView  {
         newLink.setText(item.getLink());
         newImg.setText(item.getImg());
 
-        lable.setText("Name: " + item.getTitle() );
-        lable1.setText("Discount: " + item.getDiscount() );
-        lable2.setText("Link: " + item.getLink() );
+        lable.setText("Name: " + item.getTitle());
+        lable1.setText("Discount: " + item.getDiscount());
+        lable2.setText("Link: " + item.getLink());
         URL url2 = new URL(item.getImg());
 
-         imageIcon = new ImageIcon(new ImageIcon(url2).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
-         heroShot.setIcon(imageIcon);
+        imageIcon = new ImageIcon(new ImageIcon(url2).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
+        heroShot.setIcon(imageIcon);
         System.out.println("Showing item: " + current_id);
-
-
     }
 
     @Override
     public void showItems(Product[] items) throws MVVMdemoException {
-   if(model.getSize() > 0){
-       model.removeAllElements();
-   }
-    for(Product item: items){
-        model.addElement(item);
-    }
+        if (model.getSize() > 0) {
+            model.removeAllElements();
+        }
+        for (Product item : items) {
+            model.addElement(item);
+        }
 
     }
 
-    public void setViewModel(IViewModel ob){
+    public void setViewModel(IViewModel ob) {
         viewmodel = ob;
     }
 }

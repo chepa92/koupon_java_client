@@ -1,8 +1,8 @@
 package com.viewModel;
 
 import com.MVVMdemoException;
-import com.model.IModel;
-import com.model.Product;
+import com.koupon.IModel;
+import com.koupon.Product;
 import com.view.IView;
 
 //you can define 2 IViewModels

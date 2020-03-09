@@ -1,8 +1,7 @@
 package com;
 
-import com.model.API;
-import com.model.IModel;
-import com.model.Model;
+import com.koupon.IModel;
+import com.koupon.Model;
 import com.view.IView;
 import com.view.View;
 import com.viewModel.IViewModel;

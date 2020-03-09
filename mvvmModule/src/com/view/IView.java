@@ -1,6 +1,6 @@
 package com.view;
 
-import com.model.Product;
+import com.koupon.Product;
 import com.viewModel.IViewModel;
 import com.MVVMdemoException;
 

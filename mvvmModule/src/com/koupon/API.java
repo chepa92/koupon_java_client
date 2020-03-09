@@ -1,4 +1,4 @@
-package com.model;
+package com.koupon;
 
 import okhttp3.*;
 import org.apache.log4j.BasicConfigurator;
@@ -9,10 +9,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.net.http.HttpRequest;
-import java.nio.charset.StandardCharsets;
-import java.util.Map;
 
 public class API {
 
@@ -22,23 +18,24 @@ public class API {
     static Logger log = Logger.getLogger("API");
 
     public API() {
-        System.out.println("WTF");
         BasicConfigurator.configure();
         try{
             log.addAppender(new FileAppender(new SimpleLayout(), "output.log"));
         }
         catch (IOException e){
             e.printStackTrace();
+            log.error(e);
         }
-
-        log.debug("This is debug message"); //TODO - add logger
-        log.info("This is info message"); //THIS IS AN EXAMPLE
-        log.warn("This is warn message");
-        log.fatal("This is fatal message");
-        log.error("This is error message");
+//        log.debug("This is debug message");
+//        log.info("This is info message");
+//        log.warn("This is warn message");
+//        log.fatal("This is fatal message");
     }
 
-//GET all coupons method
+    /** Our login connection to backend
+     * @param url to get any 1 string request
+     * @return is true if function have code 200
+     */
     public String sendGET(String url) throws Exception {
 
         Request request = new Request.Builder()
@@ -48,10 +45,15 @@ public class API {
                 .build();
         Response response = client.newCall(request).execute();
         String some = response.body().string();
+        log.info(some);
         return some;
     }
 
-    //Log in method
+    /** Our login connection to backend also its saves global cookie
+     * @param name is login name
+     * @param pass is login password
+     * @return is true if function have code 200
+     */
     public boolean login(String name, String pass) throws Exception {
 
         System.out.println("Logic executed successfully....");
@@ -63,6 +65,7 @@ public class API {
 
         } catch (JSONException e) {
             e.printStackTrace();
+            log.error(e);
         }
         OkHttpClient client = new OkHttpClient();
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
@@ -78,6 +81,9 @@ public class API {
         cookie = response.header("set-cookie");
         System.out.println(response.code());
 
+        log.info(response);
+        log.info("Cookie is:" + cookie);
+
         if (response.code() == 200) {
             return true;
         }
@@ -85,7 +91,10 @@ public class API {
 
     }
 
-    //DELETE method
+    /** DELETE method of coupon from site
+     * @param item is array with item details
+     * @return is true if function have code 200
+     */
     public boolean deleteItem(String item) throws Exception {
 
         MediaType mediaType = MediaType.parse("application/json");
@@ -97,8 +106,7 @@ public class API {
                 .addHeader("Cookie", cookie)
                 .build();
         Response response = client.newCall(request).execute();
-
-        System.out.println(response);
+        log.info(response);
         if (response.code() ==200) {
             return true;
         }
@@ -106,11 +114,12 @@ public class API {
 
     }
 
-
-    //POST method
+    /** our POST request of new item
+     * @param url is POST link
+     * @param product is array with item details
+     * @return is true if function have code 200
+     */
     public boolean postItem(String url, Product product) {
-
-
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("title", product.getTitle());
@@ -119,6 +128,7 @@ public class API {
             jsonObject.put("imgUrl", product.getImg());
 
         } catch (JSONException e) {
+            log.error(e);
             e.printStackTrace();
         }
 
@@ -137,6 +147,7 @@ public class API {
             response = client.newCall(request).execute();
             String resStr = response.body().string();
         } catch (IOException e) {
+            log.error(e);
             e.printStackTrace();
         }
 
@@ -147,6 +158,11 @@ public class API {
         return false;
     }
 
+    /** Our UPDATE of item function
+     * @param id is product id
+     * @param product is array with product details
+     * @return is true if function have code 200
+     */
     public boolean updateItem(String id, Product product) throws IOException {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -156,6 +172,7 @@ public class API {
             jsonObject.put("imgUrl", product.getImg());
 
         } catch (JSONException e) {
+            log.error(e);
             e.printStackTrace();
         }
 
@@ -168,8 +185,7 @@ public class API {
                 .addHeader("Cookie", cookie)
                 .build();
         Response response = client.newCall(request).execute();
-
-        System.out.println(response);
+        log.info(response);
         if (response.code() ==200) {
             return true;
         }
@@ -177,6 +193,13 @@ public class API {
 
     }
 
+    /**
+     * Our POST function with or attached
+     *
+     * @param url   post string
+     * @param other other parameters with want to pass to function
+     * @return is true if function have code 200
+     */
     public boolean sendPost(String url, String other) throws Exception {
         Request request = new Request.Builder()
                 .url(url)
@@ -185,26 +208,10 @@ public class API {
                 .build();
         Response response = client.newCall(request).execute();
         String some = response.body().string();
-
+        log.info(some);
         if (response != null) {
             return true;
         }
         return false;
     }
-
-
-    private static HttpRequest.BodyPublisher buildFormDataFromMap(Map<Object, Object> data) {
-        var builder = new StringBuilder();
-        for (Map.Entry<Object, Object> entry : data.entrySet()) {
-            if (builder.length() > 0) {
-                builder.append("&");
-            }
-            builder.append(URLEncoder.encode(entry.getKey().toString(), StandardCharsets.UTF_8));
-            builder.append("=");
-            builder.append(URLEncoder.encode(entry.getValue().toString(), StandardCharsets.UTF_8));
-        }
-        System.out.println(builder.toString());
-        return HttpRequest.BodyPublishers.ofString(builder.toString());
-    }
-
 }

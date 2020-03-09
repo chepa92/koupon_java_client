@@ -19,4 +19,7 @@ public interface IView {
     public void loginSucces(String name);
     public void loginFail();
 
+    void updateFaild();
+
+    void updateSuccess();
 }

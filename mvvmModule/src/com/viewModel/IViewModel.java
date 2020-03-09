@@ -18,10 +18,8 @@ public interface IViewModel {
     public void setView(IView v);
 
     public void login(String name, String pass) ;
+    public void updateCoupon(String id,Product product);
 
-    //    public ViewModel{
-    //        this.view = setModel();
-    //    }
 
     public void postCoupon(Product product);
 }

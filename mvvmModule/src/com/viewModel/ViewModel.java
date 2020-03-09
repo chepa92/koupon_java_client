@@ -93,6 +93,36 @@ public class ViewModel implements IViewModel {
 
 
     @Override
+    public void updateCoupon(String id, Product product) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    boolean res = model.updateItem(id, product);
+                    System.out.println(res);
+                    SwingUtilities.invokeLater(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            try {
+                                if (res) {
+                                    view.updateSuccess();
+                                } else {
+                                    view.updateFaild();
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    @Override
     public void getItems() {
         new Thread(new Runnable() {
             @Override

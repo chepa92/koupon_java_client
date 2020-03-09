@@ -38,7 +38,7 @@ public class API {
         log.error("This is error message");
     }
 
-
+//GET all coupons method
     public String sendGET(String url) throws Exception {
 
         Request request = new Request.Builder()
@@ -51,6 +51,7 @@ public class API {
         return some;
     }
 
+    //Log in method
     public boolean login(String name, String pass) throws Exception {
 
         System.out.println("Logic executed successfully....");
@@ -84,6 +85,7 @@ public class API {
 
     }
 
+    //DELETE method
     public boolean deleteItem(String item) throws Exception {
 
         MediaType mediaType = MediaType.parse("application/json");
@@ -96,14 +98,17 @@ public class API {
                 .build();
         Response response = client.newCall(request).execute();
 
-        if (response != null) {
+        System.out.println(response);
+        if (response.code() ==200) {
             return true;
         }
         return false;
 
     }
 
-    public boolean postItem(String url, Product product) throws Exception {
+
+    //POST method
+    public boolean postItem(String url, Product product) {
 
 
         JSONObject jsonObject = new JSONObject();
@@ -140,6 +145,36 @@ public class API {
             return true;
         }
         return false;
+    }
+
+    public boolean updateItem(String id, Product product) throws IOException {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("title", product.getTitle());
+            jsonObject.put("discount", product.getDiscount());
+            jsonObject.put("link", product.getLink());
+            jsonObject.put("imgUrl", product.getImg());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(JSON, jsonObject.toString());
+        Request request = new Request.Builder()
+                .url("https://koupon.chepa.net/api/coupon/updateCoupon?id="+ id)
+                .method("PUT", body)
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Cookie", cookie)
+                .build();
+        Response response = client.newCall(request).execute();
+
+        System.out.println(response);
+        if (response.code() ==200) {
+            return true;
+        }
+        return false;
+
     }
 
     public boolean sendPost(String url, String other) throws Exception {

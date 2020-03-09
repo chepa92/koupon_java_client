@@ -17,20 +17,21 @@ import java.net.URL;
 public class View implements IView  {
 
     JFrame loginFrame;
-   JFrame frame, formFrame;
+   JFrame frame, formFrame, updateFrame;
     JButton bt, bt1, bt2, bt3, bt4, bt5, bt6;
     JTextField tf, nametf, passtf, titleTf, discountTf, linkTf , imgTf;
+    JTextField newTitle, newDiscount, newLink, newImg;
     JList<Product> list;
     DefaultListModel<Product> model;
-    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink, lblImg, lblStatus;
+    JLabel lable, lable1, lable2, name, pass, lblTitle, lblDiscount, lblLink, lblImg, lblStatus, lblTitle2, lblDiscount2, lblLink2, lblImg2, lblStatus2;
     JPanel panel, statusPanel;
-    JPanel loginPanel, formPanel;
+    JPanel loginPanel, formPanel, updatePanel;
     JPanel navPanel;
     JSplitPane splitPane;
     JScrollPane scrollPane;
     IViewModel viewmodel;
     JSeparator separator;
-    static String current_id;
+     String current_id;
     ImageIcon imageIcon;
     JLabel heroShot;
 
@@ -47,14 +48,20 @@ public class View implements IView  {
         loginFrame = new JFrame("Login:");
         loginPanel = new JPanel();
         formFrame = new JFrame("Add new coupon");
+        updateFrame = new JFrame("Update coupon");
         formPanel = new JPanel();
+        updatePanel = new JPanel();
         statusPanel = new JPanel();
-        nametf = new JTextField(20);
-        passtf =new JTextField(20);
-        titleTf = new JTextField(20);
-        discountTf = new JTextField(20);
-        linkTf = new JTextField(20);
+        nametf = new JTextField(10);
+        passtf =new JTextField(10);
+        titleTf = new JTextField(30);
+        discountTf = new JTextField(30);
+        linkTf = new JTextField(30);
         imgTf = new JTextField(30);
+        newTitle = new JTextField(30);
+        newDiscount = new JTextField(30);
+        newLink = new JTextField(30);
+        newImg = new JTextField(20);
         frame = new JFrame("Koupon");
         list = new JList<>();
         model = new DefaultListModel<>();
@@ -72,11 +79,18 @@ public class View implements IView  {
         lblLink = new JLabel("Link: ");
         lblImg = new JLabel("Img Link: ");
         lblStatus = new JLabel();
+        lblTitle2 = new JLabel("Title: ");
+        lblDiscount2 = new JLabel("Discount: ");
+        lblLink2  = new JLabel("Link: ");
+        lblImg2 = new JLabel("Img Link: ");
+        lblStatus = new JLabel();
+        lblStatus2 = new JLabel();
         tf = new JTextField(20);
         bt = new JButton("See All Items");
         bt1 = new JButton("Add new coupon");
         bt2 = new JButton("Delete");
         bt3 = new JButton("Update");
+        bt4 = new JButton("Update Coupon");
         bt5 = new JButton("Login");
         bt6 = new JButton("Save");
 
@@ -111,20 +125,42 @@ public class View implements IView  {
         formPanel.setLayout(boxLayout);
         formPanel.setBorder(new EmptyBorder(new Insets(50, 50, 50, 50)));
 
-
-        formPanel.add(lblTitle);
+        formPanel.add(lblTitle2);
         formPanel.add(titleTf);
-        formPanel.add(lblDiscount);
+        formPanel.add(lblDiscount2);
         formPanel.add(discountTf);
-        formPanel.add(lblLink);
+        formPanel.add(lblLink2);
         formPanel.add(linkTf);
-        formPanel.add(lblImg);
+        formPanel.add(lblImg2);
         formPanel.add(imgTf);
         formPanel.add(Box.createRigidArea(new Dimension(0, 60)));
         formPanel.add(bt6);
 
         formFrame.add(formPanel);
         formFrame.pack();
+
+        //Update Form
+
+        updateFrame.setSize(300,300);
+//      SpringLayout layout = new SpringLayout();
+        BoxLayout boxLayout2 = new BoxLayout(updatePanel, BoxLayout.Y_AXIS);
+        updatePanel.setLayout(boxLayout2);
+        updatePanel.setBorder(new EmptyBorder(new Insets(50, 50, 50, 50)));
+
+        updatePanel.add(lblTitle);
+        updatePanel.add(newTitle);
+        updatePanel.add(lblDiscount);
+        updatePanel.add(newDiscount);
+        updatePanel.add(lblLink);
+        updatePanel.add(newLink);
+        updatePanel.add(lblImg);
+        updatePanel.add(newImg);
+        updatePanel.add(Box.createRigidArea(new Dimension(0, 60)));
+        updatePanel.add(bt4);
+        updatePanel.add(lblStatus2);
+
+        updateFrame.add(updatePanel);
+        updateFrame.pack();
 
         //Main Dashboard elements
         list.setModel(model);
@@ -175,9 +211,34 @@ public class View implements IView  {
             }
 
         });
+        //Update coupon
+        bt3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateFrame.setVisible(true);
+            }
 
+        });
+        //Update coupon button click handler
+        bt4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(current_id);
+                String id = current_id;
+                String title = newTitle.getText();
+                String discount = newDiscount.getText();
+                String link = newLink.getText();
+                String img = newImg.getText();
+
+                Product product = new Product(title, discount, link, img);
+                viewmodel.updateCoupon(id, product);
+//                updateFrame.setVisible(false);
+            }
+        });
+
+        //Save new coupon button handler
         bt6.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 String newTitle = titleTf.getText();
@@ -192,12 +253,10 @@ public class View implements IView  {
                 Product product = new Product(newTitle, newDiscount, newLink, ImgLink);
                 viewmodel.postCoupon(product);
                 formFrame.setVisible(false);
-
-
             }
-
         });
 
+        //Delete coupon button handler
         bt2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -210,10 +269,8 @@ public class View implements IView  {
         });
 
 
-
         list.addListSelectionListener(e -> {
                 Product p = list.getSelectedValue();
-//               viewmodel.getItem(list.getSelectedValue().getId());
             try {
                 this.showItem(p);
             } catch (MVVMdemoException | MalformedURLException ex) {
@@ -246,6 +303,18 @@ public class View implements IView  {
     }
 
     @Override
+    public void updateFaild() {
+        lblStatus2.setForeground(Color.red);
+        lblStatus2.setText("Update Faild");
+    }
+
+    @Override
+    public void updateSuccess() {
+        lblStatus2.setForeground(Color.green);
+        lblStatus2.setText("Updated Successfully");
+    }
+
+    @Override
     public void setMessage(String text) throws MVVMdemoException {
         tf.setText(text);
     }
@@ -254,13 +323,20 @@ public class View implements IView  {
     public void showItem(Product item) throws MVVMdemoException, MalformedURLException {
 
         current_id = item.getId();
+
+        newTitle.setText(item.getTitle());
+        newDiscount.setText(item.getDiscount());
+        newLink.setText(item.getLink());
+        newImg.setText(item.getImg());
+
         lable.setText("Name: " + item.getTitle() );
         lable1.setText("Discount: " + item.getDiscount() );
         lable2.setText("Link: " + item.getLink() );
         URL url2 = new URL(item.getImg());
+
          imageIcon = new ImageIcon(new ImageIcon(url2).getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT));
          heroShot.setIcon(imageIcon);
-        System.out.println("size");
+        System.out.println("Showing item: " + current_id);
 
 
     }

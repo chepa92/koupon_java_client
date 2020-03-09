@@ -9,6 +9,8 @@ public class Model implements IModel {
     API api = new API();
     Product[] coupons ;
 
+
+
     @Override
     public Product[] getItems() throws Exception {
         String result = api.sendGET("https://koupon.chepa.net/api/coupon/getAllCoupons");
@@ -47,6 +49,20 @@ public class Model implements IModel {
         return "Failed";
 
     }
+    @Override
+    public boolean updateItem(String id , Product product) throws Exception {
+        boolean result = api.updateItem(id, product);
+        if (result)
+         {
+             System.out.println("Item: " +id +" was update successfully");
+            return result;
+         }
+         System.out.println("Failed updating");
+        return result;
+
+
+
+    }
 
     @Override
     public Product getItem(String id) throws NoSuchElementException {
@@ -63,30 +79,6 @@ public class Model implements IModel {
         boolean res = api.postItem("http://koupon.chepa.net/api/coupon/addCoupon", product);
     }
 
-
-    @Override
-    public String[] getItemsNames() {
-        String[] productsNames = new String[coupons.length];
-        for (int i = 0; i < coupons.length; i++) {
-            productsNames[i] = coupons[i].toString();
-        }
-        return productsNames;
-    }
-
-    @Override
-    public String[] getItemsPrice() throws MVVMdemoException {
-        return new String[0];
-    }
-
-    @Override
-    public String[] getItemsDesc() throws MVVMdemoException {
-        return new String[0];
-    }
-
-    @Override
-    public void addItem(String text) throws MVVMdemoException {
-
-    }
 
     @Override
     public void deleteItem(String item) throws Exception {

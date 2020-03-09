@@ -2,33 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="291639bb-132f-450a-abe3-595d41aedb9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/com/model/tests/APITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/com/model/tests/ModelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/com/view/test/ViewTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/com/viewModel/ViewModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvvmModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mvvmModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/API.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/IModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/IModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/view/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/IViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/IViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/mvvmModule/com/viewModel/ViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/IModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/viewModel/IViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/IViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/viewModel/ViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +44,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -86,22 +69,25 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Program">
-    <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.model.API" />
+  <component name="RunManager" selected="Android JUnit.APITest">
+    <configuration name="APITest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="mvvmModule" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.model.*" />
+          <option name="PATTERN" value="com.model.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.model.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.model.tests.APITest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Model" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.model.Model" />
+    <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.model.API" />
       <module name="mvvmModule" />
       <extension name="coverage">
         <pattern>
@@ -158,18 +144,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.API" />
-      <item itemvalue="Application.Model" />
       <item itemvalue="Application.Program" />
       <item itemvalue="JUnit.All in mvvmModule" />
       <item itemvalue="JUnit.All in mvvmModule (1)" />
+      <item itemvalue="Android JUnit.APITest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.APITest" />
         <item itemvalue="Application.Program" />
         <item itemvalue="JUnit.All in mvvmModule (1)" />
         <item itemvalue="JUnit.All in mvvmModule" />
         <item itemvalue="Application.API" />
-        <item itemvalue="Application.Model" />
       </list>
     </recent_temporary>
   </component>
@@ -219,11 +205,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583770236803" />
-    <state x="773" y="385" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583445967709">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2693" y="385" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583779146264">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1579776594842" />
     <state x="773" y="385" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1583445967709" />
+    <state x="2693" y="385" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1583779146264" />
     <state x="23" y="0" key="#org.jetbrains.kotlin.idea.refactoring.safeDelete.KotlinOverridingDialog" timestamp="1583755979296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -285,19 +272,25 @@
     </state>
     <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583759549761" />
     <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1583446518986" />
-    <state x="440" y="99" key="SettingsEditor" timestamp="1583445957691">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2360" y="99" key="SettingsEditor" timestamp="1583779695910">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1583445957691" />
+    <state x="2360" y="99" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1583779695910" />
     <state x="490" y="154" width="540" height="524" key="StructurePopup" timestamp="1583596944463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="490" y="154" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1583596944463" />
-    <state x="531" y="328" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583755109768">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1583778972882">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1583778972882" />
+    <state x="2584" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1583779708983">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="531" y="328" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1583755109768" />
     <state x="664" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1583445943789" />
+    <state x="2584" y="418" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1583779708983" />
     <state x="416" y="133" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1583760664683">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -319,7 +312,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/mvvmModule$All_in_mvvmModule.ic" NAME="All in mvvmModule Coverage Results" MODIFIED="1583759318012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/mvvmModule$All_in_mvvmModule__1_.ic" NAME="All in mvvmModule (1) Coverage Results" MODIFIED="1583759549671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/mvvmModule$All_in_mvvmModule.ic" NAME="All in mvvmModule Coverage Results" MODIFIED="1583759318012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

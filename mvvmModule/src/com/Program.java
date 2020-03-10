@@ -10,6 +10,10 @@ import com.viewModel.ViewModel;
 import javax.swing.*;
 import java.net.MalformedURLException;
 
+/**
+ * Defining Main Class
+ */
+
 public class Program {
     public static void main(String[] args) throws MVVMdemoException {
 

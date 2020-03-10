@@ -12,6 +12,13 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+*GUI elements including:
+ *  Log in,
+ *  Add new coupon form
+ * and updated coupon form
+* */
+
 public class View implements IView {
 
     JFrame loginFrame;
@@ -184,7 +191,7 @@ public class View implements IView {
         frame.add(splitPane, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-
+        /**See all items button handler*/
         bt.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -192,6 +199,7 @@ public class View implements IView {
             }
         });
 
+        /**Log in button handler */
         bt5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -267,6 +275,7 @@ public class View implements IView {
             }
         });
 
+        /**Showing each item info on click*/
         list.addListSelectionListener(e -> {
             Product p = list.getSelectedValue();
             try {
@@ -338,6 +347,7 @@ public class View implements IView {
         System.out.println("Showing item: " + current_id);
     }
 
+    /**Func to load all items and Refresh */
     @Override
     public void showItems(Product[] items) throws MVVMdemoException {
         if (model.getSize() > 0) {

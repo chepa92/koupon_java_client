@@ -5,11 +5,15 @@ import org.json.JSONArray;
 
 import java.util.NoSuchElementException;
 
+
+/**Model classes handles all requests to RESTful web service*/
+
 public class Model implements IModel {
 
     API api = new API();
     Product[] coupons;
 
+    /** Get all coupons */
     @Override
     public Product[] getItems() throws Exception {
         String result = api.sendGET("https://koupon.chepa.net/api/coupon/getAllCoupons");
@@ -30,13 +34,14 @@ public class Model implements IModel {
         return coupons;
     }
 
+    /** Login func*/
     @Override
     public Boolean login(String name, String pass) throws MVVMdemoException, Exception {
         boolean result = api.login(name, pass);
 
         return result;
     }
-
+/**Add new coupon func*/
     public String postCoupon(Product product) throws Exception {
         boolean result = api.postItem("https://koupon.chepa.net/api/secret", product);
 
@@ -46,6 +51,7 @@ public class Model implements IModel {
         return "Failed";
     }
 
+    /**Update existing coupon*/
     @Override
     public boolean updateItem(String id, Product product) throws Exception {
         boolean result = api.updateItem(id, product);
@@ -57,6 +63,7 @@ public class Model implements IModel {
         return result;
     }
 
+    /**Get specific coupon info*/
     @Override
     public Product getItem(String id) throws NoSuchElementException {
         for (Product product : coupons) {
@@ -73,7 +80,7 @@ public class Model implements IModel {
         boolean res = api.postItem("http://koupon.chepa.net/api/coupon/addCoupon", product);
     }
 
-
+/**Delete Coupon*/
     @Override
     public void deleteItem(String item) throws Exception {
         boolean res = api.deleteItem(item);

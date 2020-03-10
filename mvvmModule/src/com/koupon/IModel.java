@@ -2,6 +2,10 @@ package com.koupon;
 
 import com.MVVMdemoException;
 
+/**
+ * Defining Model interface
+ */
+
 //You can add more functions
 public interface IModel {
     public Product[] getItems() throws Exception;

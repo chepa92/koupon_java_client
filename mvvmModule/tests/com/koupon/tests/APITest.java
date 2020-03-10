@@ -36,6 +36,7 @@ class APITest {
         assertEquals(expected, actual);
     }
 
+    //Test dependes on coupon id
     @Test
     void deleteItem() throws Exception {
         String id ="5e6640f31aeebd00ce8a0a80";

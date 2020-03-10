@@ -10,6 +10,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+/**
+ * API class handel all requests and responses from RESTful web service
+ */
+
 public class API {
 
     static OkHttpClient client = new OkHttpClient().newBuilder().build();

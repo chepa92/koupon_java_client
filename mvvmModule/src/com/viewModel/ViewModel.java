@@ -9,6 +9,9 @@ import javax.swing.*;
 import java.net.MalformedURLException;
 import java.util.NoSuchElementException;
 
+/**
+* Definition of ViewModel class
+* */
 public class ViewModel implements IViewModel {
     private IModel model;
     private IView view;
@@ -179,10 +182,7 @@ public class ViewModel implements IViewModel {
         });
     }
 
-    @Override
-    public void addItem(String text) throws MVVMdemoException {
 
-    }
 
     @Override
     public void addItem(Product product) throws MVVMdemoException {

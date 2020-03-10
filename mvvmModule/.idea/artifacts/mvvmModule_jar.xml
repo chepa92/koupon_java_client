@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="mvvmModule:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mvvmModule_jar</output-path>
+    <root id="root">
+      <element id="archive" name="mvvmModule.jar">
+        <element id="module-output" name="mvvmModule" />
+      </element>
+      <element id="library" level="project" name="com.squareup.okhttp3:okhttp:4.4.0" />
+      <element id="library" level="project" name="KotlinJavaRuntime" />
+      <element id="library" level="project" name="json-20190722" />
+      <element id="library" level="project" name="log4j-1.2.15" />
+      <element id="library" level="project" name="junit-4.12" />
+    </root>
+  </artifact>
+</component>

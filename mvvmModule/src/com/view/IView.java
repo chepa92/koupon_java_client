@@ -7,7 +7,7 @@ import com.MVVMdemoException;
 import java.net.MalformedURLException;
 
 /**
- * Drfinig function for UI
+ * Defining View interface
  */
 public interface IView {
     public void setMessage(String text) throws MVVMdemoException; //No exceptions

@@ -1,5 +1,9 @@
 package com.koupon;
 
+/**
+ * Definition of Product class that holds information on each Coupon
+ */
+
 public class Product {
     String id;
     String title;
